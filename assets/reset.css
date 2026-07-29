@@ -69,8 +69,17 @@ canvas {
   height: 100%;
   transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.product-card .product-card__image img:first-child:only-child {
+  transition: transform 0.5s ease;
+}
 .product-card .product-card__image img + img {
   opacity: 0;
+}
+.product-card .product-card__image img + img {
+  opacity: 0;
+}
+.product-card .product-card__image:hover img:first-child:only-child {
+  transform: scale(1.03);
 }
 .product-card .product-card__image:hover img + img {
   opacity: 1;
