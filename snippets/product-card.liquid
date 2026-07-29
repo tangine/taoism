@@ -1,7 +1,6 @@
 {% liquid
   assign product = product | default: closest.product
   assign image_ratio = image_ratio | default: 1
-
 %}
 
 {% stylesheet %}
@@ -49,7 +48,7 @@ text-decoration: underline;
 {% endstylesheet %}
 
 <div class="product-card">
-  <a class="product-card__image">
+  <a class="product-card__image relative">
     {% render 'thumbnail', image: product.featured_image %}
     {% if show_secondary_image %}
       {% render 'thumbnail', image: product.images[1], class_name: "hover-image" %}
