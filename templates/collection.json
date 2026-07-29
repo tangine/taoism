@@ -9,9 +9,9 @@
  */
 {
   "sections": {
-    "slideshow_9rKDFy": {
-      "type": "slideshow",
-      "name": "t:sections.slideshow",
+    "main_product_m6HEUF": {
+      "type": "main-product",
+      "name": "t:sections.collection",
       "settings": {
         "container": "default",
         "padding_top": 20,
@@ -20,6 +20,6 @@
     }
   },
   "order": [
-    "slideshow_9rKDFy"
+    "main_product_m6HEUF"
   ]
 }
