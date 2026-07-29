@@ -14,8 +14,6 @@
   <div class="section-inner">
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
-        <div>{{ section.settings.only_show_selected_variant_image }}</div>
-          <div>{{ selected_variant.metafields.custom.images.value.size  }}</div>
         {% if section.settings.only_show_selected_variant_image and selected_variant.metafields.custom.images.value.size > 0 %}
           {% for image in selected_variant.metafields.custom.images.value %}
             <div>
