@@ -12,9 +12,15 @@
 <div class="product-card">
   <a class="product-card__image">
     {% render 'thumbnail', image: product.featured_image %}
-    {% render 'thumbnail', image: product.images[1], class_name: "hover-image" %}
+    {% if show_secondary_image %}
+      {% render 'thumbnail', image: product.images[1], class_name: "hover-image" %}
+    {% endif %}
   </a>
   <div class="product-card__info">
     <div class="product-card__title">{{ product.title }}</div>
+    <div class="product-card__price">{{ product.price | money }}</div>
+    {% if show_vendor %}
+      <div class="product-card__vendor">{{ product.vendor }}</div>
+    {% endif %}
   </div>
 </div>
