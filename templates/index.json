@@ -9,9 +9,9 @@
  */
 {
   "sections": {
-    "slideshow_BBqx4a": {
+    "slideshow_9rKDFy": {
       "type": "slideshow",
-      "name": "Slideshow",
+      "name": "t:sections.slideshow",
       "settings": {
         "container": "default",
         "padding_top": 20,
@@ -20,6 +20,6 @@
     }
   },
   "order": [
-    "slideshow_BBqx4a"
+    "slideshow_9rKDFy"
   ]
 }
