@@ -1,0 +1,12 @@
+.pagination {
+  padding: 10px 0;
+}
+.pagination .pagination__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=taoism.css.map */
