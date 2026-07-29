@@ -9,10 +9,11 @@
   <div class="section-inner">
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
-        {% if section.settings.only_show_selected_variant_image and product.selected_or_first_available_variant.metafields.custom.images.size > 0 %}
-          <div>{{ section.settings.only_show_selected_variant_image }}</div>
+        <div>{{ section.settings.only_show_selected_variant_image }}</div>
           <div>{{ product.selected_or_first_available_variant.metafields.custom.images.size }}</div>
-          {% for image in variant.metafields.custom.images %}
+        {% if section.settings.only_show_selected_variant_image and product.selected_or_first_available_variant.metafields.custom.images.size > 0 %}
+          
+          {% for image in product.selected_or_first_available_variant.metafields.custom.images %}
             <div>
               <img src="{{ image | image_url }}" alt="">
             </div>
