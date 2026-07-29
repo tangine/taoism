@@ -7,7 +7,7 @@
 {% endstylesheet %}
 
 <div class="product-card">
-  <a class="product-card__image relative">
+  <a class="product-card__image relative" href="{{ product.url }}">
     {% render 'thumbnail', image: product.featured_image %}
     {% if show_secondary_image %}
       {% render 'thumbnail', image: product.images[1], class_name: "hover-image" %}
