@@ -6,7 +6,7 @@
 
 {% if image != null %}
 <img
-  class="{{ class }}"
+  class="{{ class_name }}"
   srcset="
     {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
     {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
