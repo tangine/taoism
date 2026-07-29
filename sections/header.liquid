@@ -8,7 +8,7 @@
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
     <nav>
-      <ul>
+      <ul style="display: flex;flex-direction: row;align-items: center;gap: 10px;">
         {% for link in section.settings.menu.links %}
           <li>
             <a href="{{ link.url }}">
