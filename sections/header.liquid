@@ -9,7 +9,7 @@
   <div class="section-inner">
     <nav>
       <ul>
-        {% for link in section.settings.menu %}
+        {% for link in section.settings.menu.links %}
           <li>
             <a href="{{ link.url }}">
               {{- link.title | escape -}}
