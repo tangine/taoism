@@ -7,14 +7,24 @@
 
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
-    
+
+    {% paginate collection.products by section.settings.page_size %}
+      <ul style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        {% for product in collection.products %}
+          <li>
+            {% render 'product-card', product: product, show_secondary_image: true %}
+          </li>
+        {% endfor %}
+      </ul>
+      {% render 'pagination', paginate: paginate %}
+    {% endpaginate %}
   </div>
 </div>
 {% schema %}
 {
-  "name": "t:sections.product",
+  "name": "t:sections.collection",
   "tag": "section",
-  "class": "section product",
+  "class": "section product-list",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -37,6 +47,15 @@
     },
     {
       "type": "range",
+      "id": "page_size",
+      "label": "Page Size",
+      "default": 12,
+      "min": 4,
+      "max": 48,
+      "step": 4
+    },
+    {
+      "type": "range",
       "id": "padding_top",
       "label": "t:fields.padding_top",
       "default": 20,
@@ -56,17 +75,10 @@
       "unit": "px"
     }
   ],
-  "blocks": [
-    {
-      "type": "@app"
-    },
-    {
-      "type": "@theme"
-    }
-  ],
+  "blocks": [],
   "presets": [
     {
-      "name":  "t:sections.product"
+      "name":  "t:sections.collection"
     }
   ]
 }
