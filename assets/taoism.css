@@ -17,9 +17,6 @@
 .nav {
   font-weight: bold;
 }
-.nav .nav-item {
-  cursor: pointer;
-}
 .nav .nav-item[data-active=true], .nav .nav-item:hover {
   border-bottom: 1px solid #333;
 }
