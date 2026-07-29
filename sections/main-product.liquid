@@ -10,7 +10,17 @@
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
         {% if section.settings.only_show_selected_variant_image and variant.metafields.custom.images.size > 0 %}
+          {% for image in variant.metafields.custom.images %}
+            <div>
+              <img src="{{ image | image_url }}" alt="">
+            </div>
+          {% endfor %}
         {% else %}
+          {% for image in product.images %}
+            <div>
+              <img src="{{ image | image_url }}" alt="">
+            </div>
+          {% endfor %}
         {% endif %}
       </div>
       <div class="product-info">
