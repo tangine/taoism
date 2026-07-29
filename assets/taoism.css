@@ -17,7 +17,7 @@
 .nav {
   font-weight: bold;
 }
-.nav .nav-item[data-active] {
+.nav .nav-item[data-active=true], .nav .nav-item:hover {
   border-bottom: 1px solid #333;
 }
 
