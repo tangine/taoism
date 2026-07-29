@@ -54,6 +54,7 @@ canvas {
 .product-card {
   width: 100%;
   position: relative;
+  cursor: pointer;
 }
 .product-card .product-card__image {
   display: block;
