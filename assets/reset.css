@@ -88,5 +88,8 @@ canvas {
   transform: scale(1.03);
   transition: transform 0.5s ease;
 }
+.product-card:hover .product-card__title {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=reset.css.map */

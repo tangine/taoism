@@ -98,4 +98,10 @@ canvas {
       }
     }
   }
+
+  &:hover {
+    .product-card__title {
+      text-decoration: underline;
+    }
+  }
 }
