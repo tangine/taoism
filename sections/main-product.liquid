@@ -16,9 +16,9 @@
       <div class="media-gallery">
         <div>{{ section.settings.only_show_selected_variant_image }}</div>
           <div>{{ selected_variant.metafields.custom.images.value.size  }}</div>
-        {% if section.settings.only_show_selected_variant_image and product.selected_or_first_available_variant.metafields.custom.value.size > 0 %}
+        {% if section.settings.only_show_selected_variant_image and selected_variant.metafields.custom.value.size > 0 %}
           
-          {% for image in product.selected_or_first_available_variant.metafields.custom.images.value %}
+          {% for image in selected_variant.metafields.custom.images.value %}
             <div>
               <img src="{{ image | image_url }}" alt="">
             </div>
