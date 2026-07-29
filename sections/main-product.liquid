@@ -1,0 +1,80 @@
+{% style %}
+  #{{ section.id }} .section-inner {
+    padding-top: {{ section.settings.padding_top | append : 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom | append : 'px' }};
+  }
+{% endstyle %}
+
+<div id="{{ section.id }}" class="relative">
+  <div class="section-inner">
+    <div style="display: grid;grid-template-columns: repeat(2,1fr);">
+      <div class="media-gallery"></div>
+      <div class="product-info">
+        <div>{{ product.title }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.collection",
+  "tag": "section",
+  "class": "section product-list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings":  [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "full-width",
+          "label": "Full Width"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "page_size",
+      "label": "Page Size",
+      "default": 12,
+      "min": 4,
+      "max": 48,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:fields.padding_top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:fields.padding_bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name":  "t:sections.collection"
+    }
+  ]
+}
+{% endschema %}
