@@ -8,9 +8,9 @@
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
     <nav>
-      <ul style="display: flex;flex-direction: row;align-items: center;gap: 10px;">
+      <ul class="nav" style="display: flex;flex-direction: row;align-items: center;gap: 10px;">
         {% for link in section.settings.menu.links %}
-          <li data-active="{{ link.active }}">
+          <li class="nav-item" data-active="{{ link.active }}">
             <a href="{{ link.url }}">
               {{- link.title | escape -}}
             </a>
