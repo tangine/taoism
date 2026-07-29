@@ -1,0 +1,67 @@
+{% style %}
+  #{{ section.id }} .section-inner {
+    padding-top: {{ section.settings.padding_top | append : 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom | append : 'px' }};
+  }
+{% endstyle %}
+
+<div id="{{ section.id }}" class="relative">
+  <div class="section-inner">
+    <h1>{{ page.title | escape }}</h1>
+    <div>{{ page.content }}</div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.page",
+  "tag": "section",
+  "class": "section page",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings":  [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "full-width",
+          "label": "Full Width"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:fields.padding_top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:fields.padding_bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name":  "t:sections.page"
+    }
+  ]
+}
+{% endschema %}
