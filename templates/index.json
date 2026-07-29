@@ -12,7 +12,9 @@
     "slideshow_BBqx4a": {
       "type": "slideshow",
       "name": "Slideshow",
-      "settings": {}
+      "settings": {
+        "container": "full-width"
+      }
     }
   },
   "order": [
