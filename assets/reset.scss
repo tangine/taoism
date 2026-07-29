@@ -67,18 +67,19 @@ canvas {
 //      left: 0;
 //      width: 100%;
 //      height: 100%;
-//      transition: all 0.3s ease-in-out;
+//      transition: opacity .4s cubic-bezier(.25,.46,.45,.94);
 //    }
 //
-//    .hover-image {
+//    img + img {
 //      opacity: 0;
 //    }
 //
 //    &:hover {
-//      transform: scale(1.03);
 //
-//      .hover-image {
+//      img + img {
 //        opacity: 1;
+//        transform: scale(1.03);
+//        transition: transform .5s ease;
 //      }
 //    }
 //  }
