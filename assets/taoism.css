@@ -10,6 +10,9 @@
   flex-wrap: wrap;
 }
 
+nav.nav {
+  font-weight: bold;
+}
 nav.nav .nav-item[data-active] {
   border-bottom: 1px solid #333;
 }
