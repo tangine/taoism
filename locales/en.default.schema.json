@@ -26,7 +26,7 @@
   },
   "fields": {
     "menu": "Menu",
-    "only_show_selected_variant_image": "Menu",
+    "only_show_selected_variant_image": "Only show selected variant image",
     "padding_top": "Padding top",
     "padding_bottom": "Padding bottom"
   }
