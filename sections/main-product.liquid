@@ -10,7 +10,7 @@
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
         <div>{{ section.settings.only_show_selected_variant_image }}</div>
-          <div>{{ product.selected_or_first_available_variant | json }}</div>
+          <div>{{ product | json }}</div>
         {% if section.settings.only_show_selected_variant_image and product.selected_or_first_available_variant.metafields.custom.images.size > 0 %}
           
           {% for image in product.selected_or_first_available_variant.metafields.custom.images %}
