@@ -12,7 +12,7 @@
     "main_404_H4kNmx": {
       "type": "main-404",
       "custom_css": [
-        ".id {flex: auto;}"
+        ".section-404 {flex: auto;}"
       ],
       "name": "t:sections.404",
       "settings": {}
