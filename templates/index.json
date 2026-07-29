@@ -9,11 +9,6 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
-      "name": "slideshow",
-      "settings": {}
-    },
     "slideshow_BBqx4a": {
       "type": "slideshow",
       "name": "Slideshow",
@@ -21,7 +16,6 @@
     }
   },
   "order": [
-    "slideshow",
     "slideshow_BBqx4a"
   ]
 }
