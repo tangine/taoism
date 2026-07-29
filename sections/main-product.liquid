@@ -10,7 +10,7 @@
     <ul>
       {% for product in collection.products %}
         <li>
-          {% render 'product', product: product %}
+          {% render 'product-card', product: product %}
         </li>
       {% endfor %}
     </ul>
@@ -18,7 +18,7 @@
 </div>
 {% schema %}
 {
-  "name": "t:sections.product",
+  "name": "t:sections.collection",
   "tag": "section",
   "class": "section product-list",
   "disabled_on": {
@@ -65,7 +65,7 @@
   "blocks": [],
   "presets": [
     {
-      "name":  "t:sections.product"
+      "name":  "t:sections.collection"
     }
   ]
 }
