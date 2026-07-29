@@ -14,6 +14,8 @@
       "name": "t:sections.product",
       "settings": {
         "container": "default",
+        "page_size": 12,
+        "only_show_selected_variant_image": true,
         "padding_top": 20,
         "padding_bottom": 20
       }
