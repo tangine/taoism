@@ -8,7 +8,11 @@
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
-      <div class="media-gallery"></div>
+      <div class="media-gallery">
+        {% if section.settings.only_show_selected_variant_image and variant.metafields.custom.images.size > 0 %}
+        {% else %}
+        {% endif %}
+      </div>
       <div class="product-info">
         <h1 class="product-info__title">{{ product.title }}</h1>
         <div class="product-info__price">{{ product.price }}</div>
