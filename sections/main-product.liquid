@@ -7,17 +7,17 @@
 
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
-    <ul style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-      {% paginate collection.products by section.settings.page_size %}
+
+    {% paginate collection.products by section.settings.page_size %}
+      <ul style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
         {% for product in collection.products %}
           <li>
             {% render 'product-card', product: product %}
           </li>
         {% endfor %}
-
-        {% render 'pagination', paginate: paginate %}
-      {% endpaginate %}
-    </ul>
+      </ul>
+      {% render 'pagination', paginate: paginate %}
+    {% endpaginate %}
   </div>
 </div>
 {% schema %}
