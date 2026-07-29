@@ -9,9 +9,19 @@
  */
 {
   "type": "header",
-  "name":"t:sections.header",
+  "name": "t:sections.header",
   "sections": {
-
+    "header_hKG74A": {
+      "type": "header",
+      "name": "t:sections.header",
+      "settings": {
+        "container": "default",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
   },
-  "order": []
+  "order": [
+    "header_hKG74A"
+  ]
 }

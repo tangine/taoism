@@ -9,9 +9,19 @@
  */
 {
   "type": "footer",
-  "name":"t:sections.footer",
+  "name": "t:sections.footer",
   "sections": {
-
+    "footer_dDYyiT": {
+      "type": "footer",
+      "name": "t:sections.footer",
+      "settings": {
+        "container": "default",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
   },
-  "order": []
+  "order": [
+    "footer_dDYyiT"
+  ]
 }
