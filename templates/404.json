@@ -9,17 +9,13 @@
  */
 {
   "sections": {
-    "slideshow_9rKDFy": {
-      "type": "slideshow",
-      "name": "t:sections.slideshow",
-      "settings": {
-        "container": "default",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
+    "main_404_H4kNmx": {
+      "type": "main-404",
+      "name": "t:sections.404",
+      "settings": {}
     }
   },
   "order": [
-    "slideshow_9rKDFy"
+    "main_404_H4kNmx"
   ]
 }
