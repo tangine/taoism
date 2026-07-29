@@ -14,6 +14,8 @@
   "sections": {
     "header": "头部",
     "footer": "脚部",
+    "collection": "产品系列",
+    "product": "产品",
     "slideshow": "幻灯片"
   },
   "blocks": {

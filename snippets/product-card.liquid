@@ -1,0 +1,17 @@
+{% liquid
+  assign product = product | default: closest.product
+  assign image_ratio = image_ratio | default: 1
+  assign show_secondary_image = show_secondary_image | default: false
+  assign show_vendor = show_vendor | default: false
+  assign show_rating = show_rating | default: false
+%}
+
+<div class="product-card">
+  <a class="product-card__images">
+    {% render 'thumbnail', image: product.featured_image %}
+    {% render 'thumbnail', image: product.images[1] %}
+  </a>
+  <div class="product-card__info">
+    <div class="product-card__title">{{ product.title }}</div>
+  </div>
+</div>
