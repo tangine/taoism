@@ -39,7 +39,7 @@ opacity: 1;
 <div class="product-card">
   <a class="product-card__image">
     {% render 'thumbnail', image: product.featured_image %}
-    {% render 'thumbnail', image: product.images[1], class: "hover-image" %}
+    {% render 'thumbnail', image: product.images[1], class_name: "hover-image" %}
   </a>
   <div class="product-card__info">
     <div class="product-card__title">{{ product.title }}</div>
