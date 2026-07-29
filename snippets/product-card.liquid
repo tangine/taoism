@@ -1,9 +1,9 @@
 {% liquid
   assign product = product | default: closest.product
   assign image_ratio = image_ratio | default: 1
-  assign show_secondary_image = show_secondary_image | default: true
-  assign show_vendor = show_vendor | default: false
-  assign show_rating = show_rating | default: false
+  assign show_secondary_image = show_secondary_image and true
+  assign show_vendor = show_vendor and true
+  assign show_rating = show_rating and true
 %}
 
 {% stylesheet %}
