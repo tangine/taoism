@@ -25,7 +25,7 @@
         </li>
   {%- endfor -%}
 
-  {%- if paginate.li -%}
+  {%- if paginate.next -%}
   <li class="pagination__item pagination__item--next">
     <a href="{{ paginate.next.url }}">
       {{- 'icon-chevron-right.svg' | inline_asset_content -}}
