@@ -9,18 +9,18 @@
  */
 {
   "sections": {
-    "main_product_m6HEUF": {
-      "type": "main-product",
+    "main_collection_Bgacmz": {
+      "type": "main-collection",
       "name": "t:sections.collection",
       "settings": {
         "container": "default",
-        "page_size": 8,
+        "page_size": 12,
         "padding_top": 20,
         "padding_bottom": 20
       }
     }
   },
   "order": [
-    "main_product_m6HEUF"
+    "main_collection_Bgacmz"
   ]
 }
