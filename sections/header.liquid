@@ -6,7 +6,19 @@
 {% endstyle %}
 
 <div id="{{ section.id }}" class="relative">
-  <div class="section-inner"></div>
+  <div class="section-inner">
+    <nav>
+      <ul>
+        {% for link in section.settings.menu %}
+          <li>
+            <a href="{{ link.url }}">
+              {{- link.title | escape -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </div>
 {% schema %}
 {
