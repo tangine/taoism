@@ -8,11 +8,15 @@
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
     <ul style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-      {% for product in collection.products %}
-        <li>
-          {% render 'product-card', product: product %}
-        </li>
-      {% endfor %}
+      {% paginate collection.products by section.settings.page_size %}
+        {% for product in collection.products %}
+          <li>
+            {% render 'product-card', product: product %}
+          </li>
+        {% endfor %}
+
+        {% render 'pagination', paginate: paginate %}
+      {% endpaginate %}
     </ul>
   </div>
 </div>
@@ -40,6 +44,15 @@
           "label": "Full Width"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "page_size",
+      "label": "Page Size",
+      "default": 12,
+      "min": 4,
+      "max": 48,
+      "step": 4
     },
     {
       "type": "range",
