@@ -1,7 +1,7 @@
 <div style="display: flex;flex-direction: column;justify-content: center; align-items: center">
-  <h1>{{- 'content.page_not_found' | t -}}</h1>
+  <h1>{{- 'content.page_not_found' | t | escape -}}</h1>
   <div>
-    <button>{{- 'actions.continue_shopping' | t -}}</button>
+    <button>{{- 'actions.continue_shopping' | t | escape -}}</button>
   </div>
 </div>
 
