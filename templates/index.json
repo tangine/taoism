@@ -1,6 +1,12 @@
 {
   "sections": {
-
+    "slideshow": {
+      "type": "slideshow",
+      "name": "slideshow",
+      "block_order": [],
+      "blocks": [],
+      "settings": []
+    }
   },
-  "order": []
+  "order": ["slideshow"]
 }
