@@ -16,7 +16,7 @@
       <div class="media-gallery">
         <div>{{ section.settings.only_show_selected_variant_image }}</div>
           <div>{{ selected_variant.metafields.custom.images.value.size  }}</div>
-        {% if section.settings.only_show_selected_variant_image and selected_variant.metafields.custom.value.size > 0 %}
+        {% if section.settings.only_show_selected_variant_image and selected_variant.metafields.custom.images.value.size > 0 %}
           <div>test</div>
           {% for image in selected_variant.metafields.custom.images.value %}
             <div>
