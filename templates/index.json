@@ -13,9 +13,15 @@
       "type": "slideshow",
       "name": "slideshow",
       "settings": {}
+    },
+    "slideshow_BBqx4a": {
+      "type": "slideshow",
+      "name": "Slideshow",
+      "settings": {}
     }
   },
   "order": [
-    "slideshow"
+    "slideshow",
+    "slideshow_BBqx4a"
   ]
 }
