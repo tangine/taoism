@@ -14,7 +14,8 @@
   "sections": {
     "header": "Header",
     "footer": "Footer",
-    "collection": "collection",
+    "collection": "Collection",
+    "collection-list": "Collection list",
     "product": "Product",
     "slideshow": "Slideshow"
   },
