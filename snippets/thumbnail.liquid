@@ -1,10 +1,12 @@
 {% liquid
   assign image = image | default: null
+  assign class = image | default: ""
   assign lazy = lazy | default: true
 %}
 
 {% if image != null %}
 <img
+  class="{{ class }}"
   srcset="
     {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
     {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}

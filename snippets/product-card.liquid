@@ -8,30 +8,38 @@
 
 {% stylesheet %}
 .product-card {
-  width: 100%;
-  position: relative;
+width: 100%;
+position: relative;
 }
-
 .product-card .product-card__image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1;
-  position: relative;
+display: block;
+position: relative;
+width: 100%;
+aspect-ratio: 1/1;
 }
-
 .product-card .product-card__image img {
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transition: all 0.3s ease-in-out;
+}
+.product-card .product-card__image .hover-image {
+opacity: 0;
+}
+.product-card .product-card__image:hover {
+transform: scale(1.03);
+}
+.product-card .product-card__image:hover .hover-image {
+opacity: 1;
 }
 {% endstylesheet %}
 
 <div class="product-card">
   <a class="product-card__image">
     {% render 'thumbnail', image: product.featured_image %}
-    {% render 'thumbnail', image: product.images[1] %}
+    {% render 'thumbnail', image: product.images[1], class: "hover-image" %}
   </a>
   <div class="product-card__info">
     <div class="product-card__title">{{ product.title }}</div>
