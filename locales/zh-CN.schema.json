@@ -12,15 +12,15 @@
 
   },
   "sections": {
-    "header": "Header",
-    "footer": "Footer",
-    "slideshow": "Slideshow"
+    "header": "头部",
+    "footer": "脚部",
+    "slideshow": "幻灯片"
   },
   "blocks": {
 
   },
   "fields": {
-    "padding_top": "Padding top",
-    "padding_bottom": "Padding bottom"
+    "padding_top": "上边距",
+    "padding_bottom": "下边距"
   }
 }
