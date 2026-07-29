@@ -7,7 +7,7 @@
 
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
-    <ul>
+    <ul style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
       {% for product in collection.products %}
         <li>
           {% render 'product-card', product: product %}
