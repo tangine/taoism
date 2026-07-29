@@ -23,6 +23,7 @@
 
   },
   "fields": {
+    "menu": "菜单",
     "padding_top": "上边距",
     "padding_bottom": "下边距"
   }

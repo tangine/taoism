@@ -23,6 +23,7 @@
 
   },
   "fields": {
+    "menu": "Menu",
     "padding_top": "Padding top",
     "padding_bottom": "Padding bottom"
   }
