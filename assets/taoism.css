@@ -13,7 +13,8 @@
 .nav {
   font-weight: bold;
 }
-.nav .nav-item[data-active=true], .nav .nav-item:hover {
+.nav .nav-item[data-active] {
   border-bottom: 1px solid #333;
 }
+
 /*# sourceMappingURL=taoism.css.map */
