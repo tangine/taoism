@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "add": "添加",
+    "add_to_cart": "添加至购物车",
+    "added": "已添加",
+    "continue_shopping": "继续购物"
+  },
+  "content": {
+    "page_not_found": "页面未找到"
+  }
+}

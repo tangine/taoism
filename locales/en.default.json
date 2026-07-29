@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "add": "Add",
+    "add_to_cart": "Add to cart",
+    "added": "Added",
+    "continue_shopping": "Continue shopping"
+  },
+  "content": {
+    "page_not_found": "Page Not Found"
+  }
+}
