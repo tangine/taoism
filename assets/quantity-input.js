@@ -33,7 +33,9 @@ class QuantityInput extends HTMLElement {
       bubbles: true,
       cancelable: true,
       composed: true,
-      detail: {}
+      detail: {
+        quantity: this.quantityInput.value
+      }
     }));
   }
 }
