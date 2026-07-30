@@ -52,9 +52,9 @@
           %}
           {% for variant in product.variants %}
             {% for current_option in current_options %}
-              {% if variant.options[forloop.index0] != current_option %}
+              {%- if variant.options[forloop.index0] != current_option -%}
                 {% break %}
-              {% elsif forloop.last %}
+              {%- elsif forloop.last -%}
                 <label>
                   <input type="radio"
                          value="{{ option_value.name }}"
@@ -67,7 +67,7 @@
                   />
                   <span>{{ option_value.name }}</span>
                 </label>
-              {% endif %}
+              {%- endif -%}
             {% endfor %}
           {% endfor %}
         {% endfor %}
