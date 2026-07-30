@@ -31,6 +31,13 @@ class VariantPicker extends HTMLElement{
         const newPage = new DOMParser().parseFromString(text, 'text/html');
         document.getElementById(sectionId).innerHTML = newPage.getElementById(sectionId).innerHTML;
         console.log("success");
+
+        try {
+          const variant = JSON.parse(newPage.querySelectorAll("[data-selected-variant]")?.textContent)
+          history.replaceState({}, "", `${productUrl}?variant=${variant.id}`);
+        } catch (e) {
+
+        }
       }).catch(error => console.log(error));
   }
 
