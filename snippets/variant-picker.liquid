@@ -1,6 +1,7 @@
 {% liquid
   assign product = product | default: closest.product
   assign current_variant = product | default: closest.product.selected_or_first_available_variant
+  assign selected_options = "" | split: ","
 %}
 
 {% unless product.has_only_default_variant %}
@@ -9,9 +10,15 @@
 
     {% for produc_option in product.options_with_values %}
       {% for option_value in product_option.values %}
-
+        {% if option_value.selected %}
+          {% liquid
+            assign selected_options = selected_options | concat: forloop.index0
+          %}
+        {% endif %}
       {% endfor %}
     {% endfor %}
+
+    <div>{{ selected_options }}</div>
 
     {% for product_option in product.options_with_values %}
       <fieldset>
