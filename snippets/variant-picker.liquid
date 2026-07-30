@@ -2,6 +2,7 @@
   assign product = product | default: closest.product
   assign current_variant = product | default: closest.product.selected_or_first_available_variant
   assign selected_options = ""
+  assign separator = ","
 %}
 
 {% unless product.has_only_default_variant %}
@@ -15,13 +16,13 @@
           assign value_index = forloop.index0
           if option_value.selected
             if option_index != 0
-              assign selected_options = selected_options | append: ","
+              assign selected_options = selected_options | append: separator
             endif
             assign selected_options = selected_options | append: value_index
           endif
         endfor
       endfor
-      assign selected_options = selected_options | split: ","
+      assign selected_options = selected_options | split: separator
     %}
 
     <div>{{ selected_options }}</div>
