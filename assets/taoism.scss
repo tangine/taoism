@@ -71,7 +71,7 @@
 
       &:has(input:checked[data-available="false"]) {
         span {
-          color: #555;
+          color: #555 !important;
         }
       }
 
