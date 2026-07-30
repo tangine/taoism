@@ -39,3 +39,30 @@
     width: 100%;
   }
 }
+
+.product-variant-picker {
+  fieldset {
+    label {
+      display: inline-block;
+      color: #333333;
+      background: white;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid #333;
+
+      input {
+        display: none;
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      &:has(input:checked) {
+        color: white;
+        background: black;
+      }
+    }
+  }
+}
