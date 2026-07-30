@@ -46,7 +46,12 @@ class VariantPicker extends HTMLElement{
   }
 
   #dispatch() {
-    this.dispatchEvent(new CustomEvent('variant:change'));
+    this.dispatchEvent(new CustomEvent('variant:change', {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+      detail: {}
+    }));
   }
 }
 
