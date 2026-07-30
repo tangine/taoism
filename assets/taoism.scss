@@ -67,11 +67,16 @@
           color: #cccccc;
           text-decoration: line-through;
         }
+
+        &:has(input:checked) {
+          color: #555;
+        }
       }
 
       &:has(input:checked) {
         color: white;
         background: black;
+
       }
     }
   }
