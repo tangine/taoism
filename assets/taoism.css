@@ -50,6 +50,9 @@
 .product-variant-picker fieldset label:has(input[data-available=false]) {
   cursor: not-allowed;
 }
+.product-variant-picker fieldset label:has(input[data-available=false]) span {
+  text-decoration: line-through;
+}
 .product-variant-picker fieldset label:has(input:checked) {
   color: white;
   background: black;
