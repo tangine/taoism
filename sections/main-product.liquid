@@ -6,7 +6,7 @@
 {% endstyle %}
 
 {% liquid
-  assign selected_variant = product.selected_or_first_available_variant
+  assign current_variant = product.selected_or_first_available_variant
 %}
 
 
@@ -14,8 +14,8 @@
   <div class="section-inner">
     <div style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
-        {% if section.settings.only_show_selected_variant_image and selected_variant.metafields.custom.images.value.size > 0 %}
-          {% for image in selected_variant.metafields.custom.images.value %}
+        {% if section.settings.only_show_selected_variant_image and current_variant.metafields.custom.images.value.size > 0 %}
+          {% for image in current_variant.metafields.custom.images.value %}
             <div>
               <img src="{{ image | image_url }}" alt="">
             </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="product-info">
         <h1 class="product-info__title">{{ product.title }}</h1>
-        <div class="product-info__price">{{ product.price }}</div>
+        <div class="product-info__price">{{ current_variant.price | money }}</div>
         <div class="product-info__vendor">{{ product.vendor }}</div>
         {% render 'variant-picker', product:product %}
       </div>
