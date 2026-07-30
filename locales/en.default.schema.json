@@ -28,6 +28,7 @@
   },
   "fields": {
     "menu": "Menu",
+    "thickness": "Thickness",
     "only_show_selected_variant_image": "Only show selected variant image",
     "variant_images_source": "Variant images source",
     "padding_top": "Padding top",
