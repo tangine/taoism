@@ -1,10 +1,18 @@
 {% liquid
   assign product = product | default: closest.product
+  assign current_variant = product | default: closest.product.selected_or_first_available_variant
 %}
 
 {% unless product.has_only_default_variant %}
   <variant-picker>
     <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
+
+    {% for produc_option in product.options_with_values %}
+      {% for option_value in product_option.values %}
+
+      {% endfor %}
+    {% endfor %}
+
     {% for product_option in product.options_with_values %}
       <fieldset>
         <legend>{{ product_option.name }}</legend>
