@@ -27,7 +27,7 @@
     "divider": "Divider",
     "variant_picker": "Variant picker"
   },
-  "fields": {
+  "settings": {
     "menu": "Menu",
     "thickness": "Thickness",
     "only_show_selected_variant_image": "Only show selected variant image",
