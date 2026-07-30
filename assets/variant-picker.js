@@ -13,6 +13,8 @@ class VariantPicker extends HTMLElement{
   }
 
   #onInputChange(event) {
+    event.preventDefault();
+    event.stopPropagation();
     const selectedOptions = this.querySelectorAll("fieldset input:checked");
     const optionIds = []
     selectedOptions.forEach(option => {
@@ -43,7 +45,7 @@ class VariantPicker extends HTMLElement{
   }
 
   #dispatch() {
-    this.dispatchEvent(new CustomEvent('change'));
+    this.dispatchEvent(new CustomEvent('variant:change'));
   }
 }
 

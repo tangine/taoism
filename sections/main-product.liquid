@@ -9,10 +9,11 @@
   assign current_variant = product.selected_or_first_available_variant
 %}
 
+<script type="module" src="{{ 'product-info.js' | asset_url }}"></script>
 
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
-    <div style="display: grid;grid-template-columns: repeat(2,1fr);">
+    <product-info style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
         {% if section.settings.only_show_selected_variant_image and current_variant.metafields.custom.images.value.size > 0 %}
           {% for image in current_variant.metafields.custom.images.value %}
@@ -35,7 +36,7 @@
         {% render 'quantity-input', quantity: 1 %}
         {% render 'variant-picker', product:product %}
       </div>
-    </div>
+    </product-info>
   </div>
 </div>
 
