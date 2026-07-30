@@ -60,6 +60,10 @@
         display: inline-block;
       }
 
+      &:has(input[data-available="false"]) {
+        cursor: not-allowed;
+      }
+
       &:has(input:checked) {
         color: white;
         background: black;
