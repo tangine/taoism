@@ -25,6 +25,8 @@
   },
   "fields": {
     "menu": "菜单",
+    "only_show_selected_variant_image": "仅显示选中变种图片",
+    "variant_images_source": "变种图片来源",
     "padding_top": "上边距",
     "padding_bottom": "下边距"
   }

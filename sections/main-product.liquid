@@ -77,6 +77,13 @@
       "default": false
     },
     {
+      "type": "text",
+      "id": "variant_images_source",
+      "label": "t:fields.variant_images_source",
+      "default": "custom.images",
+      "visible_if": "{{ only_show_selected_variant_image == true }}"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "t:fields.padding_top",
