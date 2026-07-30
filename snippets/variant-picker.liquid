@@ -54,22 +54,23 @@
           %}
           {% for variant in product.variants %}
             {% for current_option in current_options %}
+              <div>{{ current_option }}</div>
               {% if variant.options[forloop.index0] != current_option %}
                 {% break %}
               {% elsif forloop.last %}
-                <label>
-                  <input type="radio"
-                         value="{{ option_value.name }}"
-                         name="{{ product_option.name }}"
-                         data-available="{{ variant.available }}"
-                         data-id="{{ option_value.id }}"
-                         data-name="{{ product_option.name }}"
-                         data-value="{{ option_value.name }}"
-                         {% if option_value.selected %}checked{% endif %}
-                  />
-                  <span>{{ option_value.name }}</span>
-                  </label>
-                {% endif %}
+                {% comment %}<label>{% endcomment %}
+                  {% comment %}<input type="radio"{% endcomment %}
+                         {% comment %}value="{{ option_value.name }}"{% endcomment %}
+                         {% comment %}name="{{ product_option.name }}"{% endcomment %}
+                         {% comment %}data-available="{{ variant.available }}"{% endcomment %}
+                         {% comment %}data-id="{{ option_value.id }}"{% endcomment %}
+                         {% comment %}data-name="{{ product_option.name }}"{% endcomment %}
+                         {% comment %}data-value="{{ option_value.name }}"{% endcomment %}
+                         {% comment %}{% if option_value.selected %}checked{% endif %}{% endcomment %}
+                  {% comment %}/>{% endcomment %}
+                  {% comment %}<span>{{ option_value.name }}</span>{% endcomment %}
+                {% comment %}</label>{% endcomment %}
+              {% endif %}
             {% endfor %}
           {% endfor %}
         {% endfor %}
