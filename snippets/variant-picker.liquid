@@ -10,7 +10,11 @@
         <legend>{{ product_option.name }}</legend>
         {% for option_value in product_option.values %}
           <label>
-            <input type="radio" name="{{ product_option.name }}" data-id="{{ option_value.id }}">
+            <input type="radio"
+                   name="{{ product_option.name }}"
+                   value="{{ value.name }}"
+                   data-id="{{ option_value.id }}"
+                   data-value="{{ option_value.value }}">
           </label>
         {% endfor %}
       </fieldset>
