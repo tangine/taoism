@@ -25,13 +25,18 @@
   }
 }
 
+.svg-wrapper {
+  color: currentColor;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  width: 1em;
+  height: 1em;
+}
+
 .quantity {
   .quantity__button {
-    .svg-wrapper {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-    }
   }
 
   .quantity__input {

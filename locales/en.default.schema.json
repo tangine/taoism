@@ -9,9 +9,10 @@
  */
 {
   "categories": {
-
+    "layout": "layout"
   },
   "sections": {
+    "divider": "Divider",
     "header": "Header",
     "footer": "Footer",
     "collection": "Collection",

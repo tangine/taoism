@@ -21,11 +21,16 @@
   border-bottom: 1px solid #333;
 }
 
-.quantity .quantity__button .svg-wrapper {
+.svg-wrapper {
+  color: currentColor;
   display: inline-block;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
   width: 1em;
   height: 1em;
 }
+
 .quantity .quantity__input {
   text-align: center;
   width: 100%;
