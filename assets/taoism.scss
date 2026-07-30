@@ -67,11 +67,11 @@
           color: #cccccc;
           text-decoration: line-through;
         }
+      }
 
-        &:has(input:checked) {
-          span {
-            color: #555;
-          }
+      &:has(input:checked[data-available="false"]) {
+        span {
+          color: #555;
         }
       }
 

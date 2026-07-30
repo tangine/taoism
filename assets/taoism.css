@@ -54,7 +54,7 @@
   color: #cccccc;
   text-decoration: line-through;
 }
-.product-variant-picker fieldset label:has(input[data-available=false]):has(input:checked) span {
+.product-variant-picker fieldset label:has(input:checked[data-available=false]) span {
   color: #555;
 }
 .product-variant-picker fieldset label:has(input:checked) {
