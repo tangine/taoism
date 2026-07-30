@@ -12,7 +12,7 @@
       {% for option_value in produc_option.values %}
         {% if option_value.selected %}
           {% liquid
-            assign selected_options = selected_options | concat: forloop.index0
+            assign selected_options = selected_options | concat : forloop.index0 | split: ","
           %}
         {% endif %}
       {% endfor %}
