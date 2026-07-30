@@ -10,7 +10,7 @@ class ProductInfo extends HTMLElement {
   #onVariantChange(event) {
     event.preventDefault();
     event.stopPropagation();
-    console.log(event.target);
+    console.log(event.target.detail);
   }
 }
 
