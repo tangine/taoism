@@ -52,13 +52,14 @@
               assign current_options = current_options | split: separator
             endfor
           %}
-          {% for variant in product.variants %}
-            <div>{{ current_options }}</div>
-            {% for current_option in current_options %}
-              <div>{{ current_option }}</div>
-              {% if variant.options[forloop.index0] != current_option %}
-                {% break %}
-              {% elsif forloop.last %}
+          <div>{{ current_options }}</div>
+          {% comment %}{% for variant in product.variants %}{% endcomment %}
+            {% comment %}<div>{{ current_options }}</div>{% endcomment %}
+            {% comment %}{% for current_option in current_options %}{% endcomment %}
+              {% comment %}<div>{{ current_option }}</div>{% endcomment %}
+              {% comment %}{% if variant.options[forloop.index0] != current_option %}{% endcomment %}
+                {% comment %}{% break %}{% endcomment %}
+              {% comment %}{% elsif forloop.last %}{% endcomment %}
                 {% comment %}<label>{% endcomment %}
                   {% comment %}<input type="radio"{% endcomment %}
                          {% comment %}value="{{ option_value.name }}"{% endcomment %}
@@ -71,9 +72,9 @@
                   {% comment %}/>{% endcomment %}
                   {% comment %}<span>{{ option_value.name }}</span>{% endcomment %}
                 {% comment %}</label>{% endcomment %}
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
+              {% comment %}{% endif %}{% endcomment %}
+            {% comment %}{% endfor %}{% endcomment %}
+          {% comment %}{% endfor %}{% endcomment %}
         {% endfor %}
       </fieldset>
     {% endfor %}
