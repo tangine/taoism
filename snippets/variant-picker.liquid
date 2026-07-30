@@ -26,8 +26,6 @@
       assign end_index = selected_options_index.size | minus: 1
     %}
 
-    <div>{{ selected_options_index }}</div>
-
     {% for product_option in product.options_with_values %}
       {% liquid assign option_index = forloop.index0 %}
       <fieldset>
