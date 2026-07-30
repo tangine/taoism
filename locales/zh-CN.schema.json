@@ -12,6 +12,7 @@
     "layout": "布局"
   },
   "sections": {
+    "404": "404",
     "divider": "分隔符",
     "header": "头部",
     "footer": "脚部",
