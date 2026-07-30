@@ -9,7 +9,7 @@
     <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
 
     {% for produc_option in product.options_with_values %}
-      {% for option_value in product_option.values %}
+      {% for option_value in produc_option.values %}
         {% if option_value.selected %}
           {% liquid
             assign selected_options = selected_options | append: forloop.index0
