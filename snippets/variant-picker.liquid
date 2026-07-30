@@ -23,28 +23,49 @@
         endfor
       endfor
       assign selected_options = selected_options | split: separator
+      assign end_index = selected_options.size | minus: 1
     %}
 
     <div>{{ selected_options }}</div>
 
     {% for product_option in product.options_with_values %}
+      {% liquid assign option_index = forloop.index0 %}
       <fieldset>
         <legend>{{ product_option.name }}</legend>
         {% for option_value in product_option.values %}
-          <label>
-            <input type="radio"
-                   name="{{ product_option.name }}"
-                   value="{{ option_value.name }}"
-                   data-option-id="{{ option_value.id }}"
-                   data-option-name="{{ product_option.name }}"
-                   data-option-value="{{ option_value.name }}"
-            {% if option_value.selected %}
-              checked data-checked="true"
-            {% else %}
-              data-checked="false"
-              {% endif %}>
-            <span>{{ option_value.name }}</span>
-          </label>
+          {% liquid
+            assign current_options = ""
+            assign value_index = forloop.index0
+
+            for index in (0..end_index)
+              assign option = ""
+              if index != 0
+                assign current_options = current_options | append: separator
+              endif
+              if option_index == index
+                assign option = option_value.name
+              else
+                assign selected_index = selected_options[index] | plus: 0
+                assign option = product.options_with_values[index].values[selected_index].name
+              endif
+              assign current_options = current_options | append: separator
+            endfor
+          %}
+          <div>{{ current_options }}</div>
+          {% comment %}<label>{% endcomment %}
+            {% comment %}<input type="radio"{% endcomment %}
+                   {% comment %}name="{{ product_option.name }}"{% endcomment %}
+                   {% comment %}value="{{ option_value.name }}"{% endcomment %}
+                   {% comment %}data-option-id="{{ option_value.id }}"{% endcomment %}
+                   {% comment %}data-option-name="{{ product_option.name }}"{% endcomment %}
+                   {% comment %}data-option-value="{{ option_value.name }}"{% endcomment %}
+            {% comment %}{% if option_value.selected %}{% endcomment %}
+              {% comment %}checked data-checked="true"{% endcomment %}
+            {% comment %}{% else %}{% endcomment %}
+              {% comment %}data-checked="false"{% endcomment %}
+              {% comment %}{% endif %}>{% endcomment %}
+            {% comment %}<span>{{ option_value.name }}</span>{% endcomment %}
+          {% comment %}</label>{% endcomment %}
         {% endfor %}
       </fieldset>
     {% endfor %}
