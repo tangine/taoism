@@ -49,8 +49,8 @@
                 assign option = product.options_with_values[index].values[selected_index].name
               endif
               assign current_options = current_options | append: option
-              assign current_options = current_options | split: separator
             endfor
+            assign current_options = current_options | split: separator
           %}
           <div>{{ separator }}</div>
           <div>{{ current_options }}</div>
