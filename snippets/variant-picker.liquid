@@ -12,7 +12,7 @@
       for product_option in product.options_with_values
         assign option_index = forloop.index0
         for option_value in product_option.values
-          assign value_index = forloop.index
+          assign value_index = forloop.index0
           if option_value.selected
             if option_index != 0
               assign selected_options = selected_options | append: ","
