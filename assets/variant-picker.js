@@ -1,10 +1,15 @@
 class VariantPicker extends HTMLElement{
+  #abortController = undefined;
   constructor() {
     super();
   }
 
   connectedCallback(){
     this.addEventListener("change", this.#onInputChange.bind(this));
+  }
+
+  disconnectedCallback(){
+    this.#abortController?.abort();
   }
 
   #onInputChange(event) {
@@ -16,7 +21,11 @@ class VariantPicker extends HTMLElement{
 
     const {productUrl, sectionId} = this.dataset
 
-    fetch(`${productUrl}?sectionId=${sectionId}&option_values=${optionIds.join(',')}`)
+    this.#abortController?.abort()
+    this.#abortController = new AbortController();
+    fetch(`${productUrl}?sectionId=${sectionId}&option_values=${optionIds.join(',')}`, {
+      signal: this.#abortController.signal
+    })
       .then(response => response.text())
       .then(text => {
         const newPage = new DOMParser().parseFromString(text, 'text/html');
