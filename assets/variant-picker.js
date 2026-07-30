@@ -10,6 +10,10 @@ class VariantPicker extends HTMLElement{
   #onInputChange(event) {
     console.log(event.target.dataset);
   }
+
+  #dispatch() {
+    this.dispatchEvent(new CustomEvent('change'));
+  }
 }
 
 if(!customElements.get("variant-picker")){

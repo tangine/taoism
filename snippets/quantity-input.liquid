@@ -1,0 +1,21 @@
+{% liquid
+  assign quantity = quantity | default: 1
+  assign min = min | default: 1
+  assign max = min | default: ''
+  assign step = step | default: 1
+%}
+
+<quantity-input class="quantity">
+  <button class="quantity__button quantity__butoon-minus">
+    <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+  </button>
+  <input type="number" class="quantity__input" {% if max != '' %} max = "{{ max }}" {% endif %}\
+         data-quantity="{{ quantity }}"
+         value="{{ quantity }}"
+         min="{{ min }}"
+         step="{{ step }}"
+      />
+  <button class="quantity__button quantity__butoon-plus">
+    <span class="svg-wrapper">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+  </button>
+</quantity-input>
