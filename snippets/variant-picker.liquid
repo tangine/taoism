@@ -53,6 +53,7 @@
             endfor
           %}
           {% for variant in product.variants %}
+            <div>{{ current_options }}</div>
             {% for current_option in current_options %}
               <div>{{ current_option }}</div>
               {% if variant.options[forloop.index0] != current_option %}
