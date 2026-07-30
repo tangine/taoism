@@ -69,7 +69,9 @@
         }
 
         &:has(input:checked) {
-          color: #555;
+          span {
+            color: #555;
+          }
         }
       }
 
