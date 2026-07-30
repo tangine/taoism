@@ -1,7 +1,6 @@
 {% liquid
   assign quantity = quantity | default: 1
   assign min = min | default: 1
-  assign max = min | default: ''
   assign step = step | default: 1
 %}
 
@@ -10,7 +9,7 @@
   <button class="quantity__button quantity__butoon-minus" name="minus" type="button">
     <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
   </button>
-  <input type="number" class="quantity__input" {% if max != '' %} max = "{{ max }}" {% endif %}\
+  <input type="number" class="quantity__input" {% unless max == null %} max = "{{ max }}" {% endunless %}
          data-quantity="{{ quantity }}"
          value="{{ quantity }}"
          min="{{ min }}"

@@ -22,6 +22,7 @@
 }
 
 .quantity .quantity__button .svg-wrapper {
+  display: inline-block;
   width: 1em;
   height: 1em;
 }
