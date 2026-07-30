@@ -31,7 +31,7 @@ class VariantPicker extends HTMLElement{
         const newPage = new DOMParser().parseFromString(text, 'text/html');
         document.getElementById(sectionId).innerHTML = newPage.getElementById(sectionId).innerHTML;
         console.log("success");
-      })
+      }).catch(error => console.log(error));
   }
 
   #dispatch() {
