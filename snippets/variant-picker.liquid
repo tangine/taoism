@@ -17,11 +17,10 @@
             if option_index != 0
               assign selected_options = selected_options | append: ","
             endif
-            assign selected_options = selected_options | append: option_value.name
+            assign selected_options = selected_options | append: value_index
           endif
         endfor
       endfor
-      assign selected_options = selected_options | split: ","
     %}
 
     <div>{{ selected_options }}</div>
