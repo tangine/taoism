@@ -1,7 +1,7 @@
 {% liquid
   assign product = product | default: closest.product
   assign current_variant = product | default: closest.product.selected_or_first_available_variant
-  assign selected_options = ""
+  assign selected_options_index = ""
   assign separator = ","
 %}
 
@@ -16,17 +16,17 @@
           assign value_index = forloop.index0
           if option_value.selected
             if option_index != 0
-              assign selected_options = selected_options | append: separator
+              assign selected_options_index = selected_options_index | append: separator
             endif
-            assign selected_options = selected_options | append: value_index
+            assign selected_options_index = selected_options_index | append: value_index
           endif
         endfor
       endfor
-      assign selected_options = selected_options | split: separator
-      assign end_index = selected_options.size | minus: 1
+      assign selected_options_index = selected_options_index | split: separator
+      assign end_index = selected_options_index.size | minus: 1
     %}
 
-    <div>{{ selected_options }}</div>
+    <div>{{ selected_options_index }}</div>
 
     {% for product_option in product.options_with_values %}
       {% liquid assign option_index = forloop.index0 %}
@@ -45,27 +45,33 @@
               if option_index == index
                 assign option = option_value.name
               else
-                assign selected_index = selected_options[index] | plus: 0
+                assign selected_index = selected_options_index[index] | plus: 0
                 assign option = product.options_with_values[index].values[selected_index].name
               endif
               assign current_options = current_options | append: option
+              assign current_options = current_options | split: separator
             endfor
           %}
-          <div>{{ current_options }}</div>
-          {% comment %}<label>{% endcomment %}
-            {% comment %}<input type="radio"{% endcomment %}
-                   {% comment %}name="{{ product_option.name }}"{% endcomment %}
-                   {% comment %}value="{{ option_value.name }}"{% endcomment %}
-                   {% comment %}data-option-id="{{ option_value.id }}"{% endcomment %}
-                   {% comment %}data-option-name="{{ product_option.name }}"{% endcomment %}
-                   {% comment %}data-option-value="{{ option_value.name }}"{% endcomment %}
-            {% comment %}{% if option_value.selected %}{% endcomment %}
-              {% comment %}checked data-checked="true"{% endcomment %}
-            {% comment %}{% else %}{% endcomment %}
-              {% comment %}data-checked="false"{% endcomment %}
-              {% comment %}{% endif %}>{% endcomment %}
-            {% comment %}<span>{{ option_value.name }}</span>{% endcomment %}
-          {% comment %}</label>{% endcomment %}
+          {% for variant in product.variants %}
+            {% for current_option in current_options %}
+              {% if variant.options[forloop.index0] != current_option %}
+                {% break %}
+              {% elsif forloop.last %}
+                <label>
+                  <input type="radio"
+                         value="{{ option_value.name }}"
+                         name="{{ product_option.name }}"
+                         data-available="{{ variant.available }}"
+                         data-id="{{ option_value.id }}"
+                         data-name="{{ product_option.name }}"
+                         data-value="{{ option_value.name }}"
+                         {% if option_value.selected %}checked{% endif %}
+                  />
+                  <span>{{ option_value.name }}</span>
+                  </label>
+                {% endif %}
+            {% endfor %}
+          {% endfor %}
         {% endfor %}
       </fieldset>
     {% endfor %}
