@@ -13,6 +13,7 @@ class QuantityInput extends HTMLElement {
   }
 
   #onButtonClick(event) {
+    console.log(event.target);
     const name = event.target.getAttribute("name");
     if(name === 'plus') {
       this.quantityInput.stepUp()
