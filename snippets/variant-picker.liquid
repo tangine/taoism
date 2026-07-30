@@ -1,0 +1,17 @@
+{% liquid
+  assign product = product | default: closest.product
+%}
+
+{% unless product.has_only_default_variant %}
+  <variant-picker>
+    <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
+    {% for fieldset in product.options_with_values %}
+      <fieldset>
+        <legend>{{ fieldset.name }}</legend>
+        <label>
+          <input type="radio" name="{{ fieldset.name }}">
+        </label>
+      </fieldset>
+    {% endfor %}
+  </variant-picker>
+{% endunless %}
