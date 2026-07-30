@@ -22,7 +22,9 @@
     "404": "404"
   },
   "blocks": {
-    "buy_buttons": "Buy button"
+    "buy_buttons": "Buy button",
+    "divider": "Divider",
+    "variant_picker": "Variant picker"
   },
   "fields": {
     "menu": "Menu",
