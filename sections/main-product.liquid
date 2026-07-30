@@ -40,6 +40,7 @@
   </div>
 </div>
 
+
 {% schema %}
 {
   "name": "t:sections.product",
@@ -81,13 +82,6 @@
       "default": false
     },
     {
-      "type": "text",
-      "id": "variant_images_source",
-      "label": "t:fields.variant_images_source",
-      "default": "custom.images",
-      "visible_if": "{{ section.settings.only_show_selected_variant_image == true }}"
-    },
-    {
       "type": "range",
       "id": "padding_top",
       "label": "t:fields.padding_top",
@@ -108,7 +102,17 @@
       "unit": "px"
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "_buy_button"
+    }
+  ],
   "presets": [
     {
       "name":  "t:sections.product"
@@ -116,3 +120,11 @@
   ]
 }
 {% endschema %}
+
+{% comment %}{{% endcomment %}
+{% comment %}"type": "text",{% endcomment %}
+{% comment %}"id": "variant_images_source",{% endcomment %}
+{% comment %}"label": "t:fields.variant_images_source",{% endcomment %}
+{% comment %}"default": "custom.images",{% endcomment %}
+{% comment %}"visible_if": "{{ section.settings.only_show_selected_variant_image == true }}"{% endcomment %}
+{% comment %}},{% endcomment %}
