@@ -21,6 +21,7 @@
           endif
         endfor
       endfor
+      assign selected_options = selected_options | split: ","
     %}
 
     <div>{{ selected_options }}</div>
