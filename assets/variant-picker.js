@@ -42,6 +42,7 @@ class VariantPicker extends HTMLElement{
           console.error(e);
         }
       }).catch(error => console.log(error));
+    this.#dispatch()
   }
 
   #dispatch() {
