@@ -10,7 +10,7 @@
 
     {% liquid
       for product_option in product.options_with_values
-        assign option_index = forloop.index
+        assign option_index = forloop.index0
         for option_value in product_option.values
           assign value_index = forloop.index
           if option_value.selected
