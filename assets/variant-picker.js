@@ -50,7 +50,9 @@ class VariantPicker extends HTMLElement{
       bubbles: true,
       cancelable: true,
       composed: true,
-      detail: {}
+      detail: {
+        "variant": "change",
+      }
     }));
   }
 }
