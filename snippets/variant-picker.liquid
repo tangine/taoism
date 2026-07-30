@@ -1,6 +1,6 @@
 {% liquid
   assign product = product | default: closest.product
-  assign current_variant = variant | default: closest.product.selected_or_first_available_variant
+  assign current_variant = product.selected_or_first_available_variant
   assign selected_options_index = ""
   assign separator = ","
 %}
