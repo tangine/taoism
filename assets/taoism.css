@@ -21,4 +21,9 @@
   border-bottom: 1px solid #333;
 }
 
+.quantity .quantity__button .svg-wrapper {
+  width: 1em;
+  height: 1em;
+}
+
 /*# sourceMappingURL=taoism.css.map */

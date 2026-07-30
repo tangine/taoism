@@ -7,7 +7,7 @@
 
 <quantity-input class="quantity">
   <script type="module" src="{{ 'quantity-input.js' | asset_url }}"></script>
-  <button class="quantity__button quantity__butoon-minus">
+  <button class="quantity__button quantity__butoon-minus" name="minus" type="button">
     <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
   </button>
   <input type="number" class="quantity__input" {% if max != '' %} max = "{{ max }}" {% endif %}\
@@ -16,7 +16,7 @@
          min="{{ min }}"
          step="{{ step }}"
       />
-  <button class="quantity__button quantity__butoon-plus">
+  <button class="quantity__button quantity__butoon-plus" name="plus" type="button">
     <span class="svg-wrapper">{{ 'icon-plus.svg' | inline_asset_content }}</span>
   </button>
 </quantity-input>
