@@ -1,22 +1,28 @@
 {% liquid
   assign product = product | default: closest.product
   assign current_variant = product | default: closest.product.selected_or_first_available_variant
-  assign selected_options = "" | split: ","
+  assign selected_options = ""
 %}
 
 {% unless product.has_only_default_variant %}
   <variant-picker>
     <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
 
-    {% for produc_option in product.options_with_values %}
-      {% for option_value in produc_option.values %}
-        {% if option_value.selected %}
-          {% liquid
-            assign selected_options = selected_options | concat : forloop.index0 | split: ","
-          %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
+    {% liquid
+      for product_option in product.options_with_values
+        assign option_index = forloop.index
+        for option_value in product_option.values
+          assign value_index = forloop.index
+          if option_value.selected
+            if option_index != 0
+              assign selected_options = selected_options | append: ","
+            endif
+            assign selected_options = selected_options | append: option_value.name
+          endif
+        endfor
+      endfor
+      assign selected_options = selected_options | split: ","
+    %}
 
     <div>{{ selected_options }}</div>
 
