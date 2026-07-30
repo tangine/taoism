@@ -1,6 +1,6 @@
 {% liquid
   assign product = product | default: closest.product
-  assign current_variant = product | default: closest.product.selected_or_first_available_variant
+  assign current_variant = variant | default: closest.product.selected_or_first_available_variant
   assign selected_options_index = ""
   assign separator = ","
 %}
@@ -9,7 +9,7 @@
   <variant-picker data-section-id="{{ section.id }}" data-product-id="{{ product.id }}" data-product-url="{{ product.url }}">
     <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
     <script data-selected-variant>
-      {{ product.selected_or_first_available_variant | json }}
+      {{ current_variant | json }}
     </script>
 
     {% liquid
