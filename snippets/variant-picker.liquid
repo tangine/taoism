@@ -13,9 +13,9 @@
             <input type="radio"
                    name="{{ product_option.name }}"
                    value="{{ option_value.name }}"
-                   data-id="{{ option_value.id }}"
-                   data-name="{{ product_option.name }}"
-                   data-value="{{ option_value.name }}"
+                   data-option-id="{{ option_value.id }}"
+                   data-option-name="{{ product_option.name }}"
+                   data-option-value="{{ option_value.name }}"
             {% if option_value.selected %}
               checked data-checked="true"
             {% else %}
