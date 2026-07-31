@@ -37,16 +37,26 @@
 
 .quantity {
   display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  &:has(input:focus) {
+    border-color: cyan;
+  }
+
   .quantity__button {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 0.5em;
+    background: transparent;
   }
 
   .quantity__input {
     text-align: center;
-    width: 100%;
+    width: auto;
+    min-width: 0;
     appearance: textfield;
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
