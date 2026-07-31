@@ -13,7 +13,7 @@ class VariantPicker extends HTMLElement{
   }
 
   #onInputChange(event) {
-    this.setAttribute('loading', true);
+    this.classList.toggle('loading');
     event.preventDefault();
     event.stopPropagation();
     const selectedOptions = this.querySelectorAll("fieldset input:checked");
