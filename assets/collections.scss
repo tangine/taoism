@@ -51,6 +51,7 @@
   &:hover {
     .product-card__title {
       text-decoration: underline;
+      text-underline-offset: .3em;
     }
   }
 }

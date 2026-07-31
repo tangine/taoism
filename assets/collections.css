@@ -39,6 +39,7 @@
 }
 .product-card:hover .product-card__title {
   text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
 /*# sourceMappingURL=collections.css.map */
