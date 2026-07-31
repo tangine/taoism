@@ -32,16 +32,20 @@
 }
 
 .quantity {
-  display: inline-block;
+  display: inline-flex;
 }
 .quantity .quantity__button {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .quantity .quantity__input {
   text-align: center;
   width: 100%;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
 .product-variant-picker fieldset label {
