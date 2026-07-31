@@ -16,41 +16,21 @@ class VariantPicker extends HTMLElement{
     event.preventDefault();
     event.stopPropagation();
     const selectedOptions = this.querySelectorAll("fieldset input:checked");
-    const optionIds = []
+    const options = []
     selectedOptions.forEach(option => {
-      optionIds.push(option.dataset["id"])
+      options.push(option.dataset);
     })
-
-    const {productUrl, sectionId} = this.dataset
-
-    this.#abortController?.abort()
-    this.#abortController = new AbortController();
-    fetch(`${productUrl}?sectionId=${sectionId}&option_values=${optionIds.join(',')}`, {
-      signal: this.#abortController.signal
-    })
-      .then(response => response.text())
-      .then(text => {
-        const newPage = new DOMParser().parseFromString(text, 'text/html');
-        document.getElementById(sectionId).innerHTML = newPage.getElementById(sectionId).innerHTML;
-        console.log("success");
-
-        try {
-          const variant = JSON.parse(newPage.querySelector("[data-selected-variant]")?.textContent)
-          console.log(variant)
-          history.replaceState({}, "", `${productUrl}?variant=${variant.id}`);
-        } catch (e) {
-          console.error(e);
-        }
-      }).catch(error => console.log(error));
     this.#dispatch()
   }
 
-  #dispatch() {
+  #dispatch(data) {
     this.dispatchEvent(new CustomEvent('variant:change', {
       bubbles: true,
       cancelable: true,
       composed: true,
-      detail: {}
+      detail: {
+        data
+      }
     }));
   }
 }
