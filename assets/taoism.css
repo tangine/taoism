@@ -48,6 +48,9 @@
   padding: 0.5em;
   background: transparent;
 }
+.quantity .quantity__button:active {
+  transform: scale(0.97);
+}
 .quantity .quantity__button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
