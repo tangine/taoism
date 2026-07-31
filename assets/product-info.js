@@ -40,7 +40,7 @@ class ProductInfo extends HTMLElement {
       const productInfo = section.querySelector("product-info");
       const variantId = productInfo.dataset['selectedVariantId'];
       this.#replaceState(productUrl, variantId);
-      document.getElementById(sectionId).innerHTML = section.querySelector(sectionId).innerHTML;
+      document.getElementById(sectionId).innerHTML = section.getElementById(sectionId).innerHTML;
     })
   }
 
