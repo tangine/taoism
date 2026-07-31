@@ -13,7 +13,7 @@
 
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
-    <product-info style="display: grid;grid-template-columns: repeat(2,1fr);">
+    <product-info data-product-id="{{ product.id }}" data-product-url="{{ product.url }}" data-selected-variant-id="{{ current_variant.id }}" style="display: grid;grid-template-columns: repeat(2,1fr);">
       <div class="media-gallery">
         {% if section.settings.only_show_selected_variant_image and current_variant.metafields.custom.images.value.size > 0 %}
           {% for image in current_variant.metafields.custom.images.value %}
