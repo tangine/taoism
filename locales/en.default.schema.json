@@ -26,6 +26,7 @@
   "blocks": {
     "buy_buttons": "Buy button",
     "divider": "Divider",
+    "product_card": "Product card",
     "variant_picker": "Variant picker"
   },
   "settings": {
