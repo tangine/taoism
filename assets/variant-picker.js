@@ -20,7 +20,7 @@ class VariantPicker extends HTMLElement{
     selectedOptions.forEach(option => {
       options.push(option.dataset);
     })
-    this.#dispatch(selectedOptions)
+    this.#dispatch(options)
   }
 
   #dispatch(data) {
