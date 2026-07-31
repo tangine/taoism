@@ -24,6 +24,7 @@ class VariantPicker extends HTMLElement{
   }
 
   #dispatch(data) {
+    console.log("variant:change", data);
     this.dispatchEvent(new CustomEvent('variant:change', {
       bubbles: true,
       cancelable: true,
