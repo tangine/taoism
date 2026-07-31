@@ -25,7 +25,7 @@
   "blocks": {
     "buy_buttons": "购买按钮",
     "divider": "分隔符",
-    "variant_picker": "变种选择器"
+    "variant_picker": "多属性选择器"
   },
   "settings": {
     "menu": "菜单",
