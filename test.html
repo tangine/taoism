@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 加载圆圈 */
+    .loading-circle {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #eee;
+      border-top-color: #409eff; /* 转动高亮色 */
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* 旋转关键帧 */
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div class="loading-circle"></div>
+</div>
+</body>
+</html>
