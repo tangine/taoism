@@ -55,6 +55,10 @@
 
     &:active {
       transform: scale(0.95);
+
+      &:disabled {
+        transform: none;
+      }
     }
 
     &:disabled {
@@ -65,7 +69,7 @@
 
   .quantity__input {
     text-align: center;
-    width: auto;
+    width: 2.5em;
     min-width: 0;
     appearance: textfield;
     -moz-appearance: textfield;
