@@ -23,7 +23,7 @@
 
 .svg-wrapper {
   color: currentColor;
-  display: inline-block;
+  display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -31,6 +31,14 @@
   height: 1em;
 }
 
+.quantity {
+  display: inline-block;
+}
+.quantity .quantity__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .quantity .quantity__input {
   text-align: center;
   width: 100%;

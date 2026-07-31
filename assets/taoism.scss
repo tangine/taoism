@@ -27,7 +27,7 @@
 
 .svg-wrapper {
   color: currentColor;
-  display: inline-block;
+  display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -36,7 +36,11 @@
 }
 
 .quantity {
+  display: inline-block;
   .quantity__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .quantity__input {
