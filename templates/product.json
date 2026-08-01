@@ -11,6 +11,33 @@
   "sections": {
     "main_product_Tb9xGW": {
       "type": "main-product",
+      "blocks": {
+        "price_xqaPyJ": {
+          "type": "_price",
+          "name": "t:blocks.price",
+          "settings": {},
+          "blocks": {}
+        },
+        "variant_picker_EqitQf": {
+          "type": "_variant-picker",
+          "name": "t:blocks.variant_picker",
+          "settings": {
+            "thickness": 1
+          },
+          "blocks": {}
+        },
+        "buy_buttons_Lwi7m7": {
+          "type": "_buy-buttons",
+          "name": "t:blocks.buy_buttons",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "price_xqaPyJ",
+        "variant_picker_EqitQf",
+        "buy_buttons_Lwi7m7"
+      ],
       "name": "t:sections.product",
       "settings": {
         "container": "default",
