@@ -30,6 +30,7 @@
         {% endif %}
       </div>
       <div class="product-info">
+        {% content_for 'blocks' %}
         {% comment %}<h1 class="product-info__title">{{ product.title }}</h1>{% endcomment %}
         {% comment %}<div class="product-info__price">{{ current_variant.price | money }}</div>{% endcomment %}
         {% comment %}<div class="product-info__vendor">{{ product.vendor }}</div>{% endcomment %}
