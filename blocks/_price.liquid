@@ -2,7 +2,7 @@
   assign product = product | default: closest.product
 %}
 
-<div>{{ product.selected_or_first_available_variant | money }}</div>
+<div>{{ product.selected_or_first_available_variant.price | money }}</div>
 
 {% schema %}
 {
