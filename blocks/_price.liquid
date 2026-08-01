@@ -1,19 +1,13 @@
-<div></div>
+{% liquid
+  assign product = product | default: closest.product
+%}
+
+<div>{{ product.selected_or_first_available_variant | money }}</div>
 
 {% schema %}
 {
   "name": "t:blocks.price",
   "settings": [
-    {
-      "type": "range",
-      "id": "thickness",
-      "label": "t:settings.thickness",
-      "min": 0.5,
-      "max": 5,
-      "step": 0.5,
-      "unit": "px",
-      "default": 1
-    }
   ],
   "blocks": [],
   "presets": [
