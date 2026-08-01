@@ -30,11 +30,11 @@
         {% endif %}
       </div>
       <div class="product-info">
-        <h1 class="product-info__title">{{ product.title }}</h1>
-        <div class="product-info__price">{{ current_variant.price | money }}</div>
-        <div class="product-info__vendor">{{ product.vendor }}</div>
-        {% render 'quantity-input', quantity: 1 %}
-        {% render 'variant-picker', product:product %}
+        {% comment %}<h1 class="product-info__title">{{ product.title }}</h1>{% endcomment %}
+        {% comment %}<div class="product-info__price">{{ current_variant.price | money }}</div>{% endcomment %}
+        {% comment %}<div class="product-info__vendor">{{ product.vendor }}</div>{% endcomment %}
+        {% comment %}{% render 'quantity-input', quantity: 1 %}{% endcomment %}
+        {% comment %}{% render 'variant-picker', product:product %}{% endcomment %}
       </div>
     </product-info>
   </div>
