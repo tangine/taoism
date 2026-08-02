@@ -6,6 +6,7 @@ class ProductInfo extends HTMLElement {
 
   connectedCallback() {
     this.addEventListener("variant:change", this.#onVariantChange.bind(this));
+    this.#updateSection.bind(this)
   }
 
   disconnectedCallback() {
