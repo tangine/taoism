@@ -39,7 +39,6 @@ class ProductInfo extends HTMLElement {
       signal
     }).then(response => response.text())
       .then(text => {
-        console.log(text);
         const html = new DOMParser().parseFromString(text, 'text/html');
         const section = html.getElementById(sectionId);
         if(section) {
