@@ -18,36 +18,48 @@ class ProductInfo extends HTMLElement {
 
     const {data} = event.detail;
 
-    this.#update_html(data);
+    const optionIds = data.map(item => item.id);
+
+    this.#updateSection(optionIds);
   }
 
-  #update_html(selectedOptions = []) {
-    const {sectionId, productUrl} = this.dataset
-    const optionIds = []
+  #updateSection(optionIds = []) {
+    const {sectionId, productUrl} = this.dataset['SectionId'];
 
-    selectedOptions.forEach(option => {
-      optionIds.push(option.id)
-    })
+    const url = new URL(productUrl);
+    sectionId ? url.searchParams.set("sectionId", sectionId) : "";
+    sectionId ? url.searchParams.set("option_values", optionIds.join(",")) : "";
 
     this.#abortController?.abort()
     this.#abortController = new AbortController();
-    fetch(`${productUrl}?sectionId=${sectionId}&option_values=${optionIds.join(',')}`, {
-      signal: this.#abortController.signal
-    })
-      .then(response => response.text())
-      .then((text) => {
-      const section = new DOMParser().parseFromString(text, 'text/html');
-      const productInfo = section.querySelector("product-info");
-      const variantId = productInfo.dataset['selectedVariantId'];
-      this.#replaceState(productUrl, variantId);
-      document.getElementById(sectionId).innerHTML = section.getElementById(sectionId).innerHTML;
+    const {signal} = this.#abortController;
+
+    fetch(url.toString(), {
+      signal
+    }).then(response => response.text())
+      .then(text => {
+        console.log(text);
+        const html = new DOMParser().parseFromString(text, 'text/html');
+        const section = html.getElementById(sectionId);
+        const productInfo = section.querySelector("product-info");
+        const {selectedVariantId} = productInfo.dataset;
+        if(selectedVariantId) {
+          this.#replaceState(productUrl, selectedVariantId);
+        }
+
+      }).catch(error => {
+        console.log(error);
     })
   }
 
-  #replaceState(productUrl, variant) {
-    const url = `${productUrl}?variant=${variant}`;
+  #replaceState(productUrl, variantId) {
+    const url = new URL(productUrl);
 
-    history.replaceState({}, "", url)
+    if(variantId) {
+      url.searchParams.set('variant', variantId)
+    }
+
+    history.replaceState({}, "", url.toString())
   }
 }
 
