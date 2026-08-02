@@ -6,7 +6,7 @@ class ProductInfo extends HTMLElement {
 
   connectedCallback() {
     this.addEventListener("variant:change", this.#onVariantChange.bind(this));
-    this.#updateSection.bind(this)
+    // this.#updateSection.bind(this)
   }
 
   disconnectedCallback() {
@@ -25,6 +25,7 @@ class ProductInfo extends HTMLElement {
   }
 
   #updateSection(optionIds = []) {
+    console.log(this)
     const {sectionId, productUrl} = this.dataset['SectionId'];
 
     const url = new URL(productUrl);
