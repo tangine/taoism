@@ -10,7 +10,7 @@
 {
   "categories": {
     "layout": "layout",
-    "product": "Product",
+    "product": "Product"
   },
   "sections": {
     "divider": "Divider",
@@ -27,12 +27,15 @@
     "buy_buttons": "Buy button",
     "divider": "Divider",
     "product_card": "Product card",
+    "product_title": "Product title",
+    "product_vendor": "Product vendor",
     "price": "Price",
     "slide": "Slide",
     "variant_picker": "Variant picker"
   },
   "settings": {
     "menu": "Menu",
+    "alignment": "Alignment",
     "thickness": "Thickness",
     "only_show_selected_variant_image": "Only show selected variant image",
     "variant_images_source": "Variant images source",

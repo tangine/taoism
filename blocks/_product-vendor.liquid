@@ -1,0 +1,26 @@
+{% liquid
+  assign product = product | default: closest.product
+%}
+
+<h1>{{ product.vendor }}</h1>
+
+{% schema %}
+{
+  "name": "t:blocks.product_vendor",
+  "settings": [
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "left"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:blocks.product_vendor",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}
