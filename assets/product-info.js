@@ -41,12 +41,15 @@ class ProductInfo extends HTMLElement {
         console.log(text);
         const html = new DOMParser().parseFromString(text, 'text/html');
         const section = html.getElementById(sectionId);
-        const productInfo = section.querySelector("product-info");
-        const {selectedVariantId} = productInfo.dataset;
-        if(selectedVariantId) {
-          this.#replaceState(productUrl, selectedVariantId);
-        }
+        if(section) {
+          const productInfo = section.querySelector("product-info");
+          const {selectedVariantId} = productInfo.dataset;
+          if(selectedVariantId) {
+            this.#replaceState(productUrl, selectedVariantId);
+          }
 
+          document.getElementById(sectionId).innerHTML = section.innerHTML;
+        }
       }).catch(error => {
         console.log(error);
     })
