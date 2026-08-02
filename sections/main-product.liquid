@@ -120,13 +120,41 @@
   "presets": [
     {
       "name":  "t:sections.product",
-      "blocks": [
-        {
-          "type": "_price"
+      "blocks": {
+        "product_title_rxRU8B": {
+          "type": "_product-title",
+          "name": "t:blocks.product_title",
+          "settings": {
+            "alignment": "left"
+          },
+          "blocks": {}
         },
-        {
-          "type": "_variant-picker"
+        "price_xqaPyJ": {
+          "type": "_price",
+          "name": "t:blocks.price",
+          "settings": {},
+          "blocks": {}
+        },
+        "variant_picker_EqitQf": {
+          "type": "_variant-picker",
+          "name": "t:blocks.variant_picker",
+          "settings": {
+            "thickness": 1
+          },
+          "blocks": {}
+        },
+        "buy_buttons_Lwi7m7": {
+          "type": "_buy-buttons",
+          "name": "t:blocks.buy_buttons",
+          "settings": {},
+          "blocks": {}
         }
+      },
+      "block_order": [
+        "product_title_rxRU8B",
+        "price_xqaPyJ",
+        "variant_picker_EqitQf",
+        "buy_buttons_Lwi7m7"
       ]
     }
   ]
