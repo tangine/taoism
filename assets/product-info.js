@@ -6,7 +6,6 @@ class ProductInfo extends HTMLElement {
 
   connectedCallback() {
     this.addEventListener("variant:change", this.#onVariantChange.bind(this));
-    // this.#updateSection.bind(this)
   }
 
   disconnectedCallback() {
@@ -25,6 +24,7 @@ class ProductInfo extends HTMLElement {
   }
 
   #updateSection(optionIds = []) {
+    this.classList.toggle("loading");
     const {sectionId, productUrl} = this.dataset;
 
     const url = new URL(`${location.origin}${productUrl}`);
@@ -52,6 +52,8 @@ class ProductInfo extends HTMLElement {
         }
       }).catch(error => {
         console.log(error);
+    }).finally(() => {
+      this.classList.toggle("loading");
     })
   }
 
@@ -63,6 +65,10 @@ class ProductInfo extends HTMLElement {
     }
 
     history.replaceState({}, "", url.toString())
+  }
+
+  #addToCart() {
+    console.log("addToCart");
   }
 }
 
