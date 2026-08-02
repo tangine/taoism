@@ -25,8 +25,7 @@ class ProductInfo extends HTMLElement {
   }
 
   #updateSection(optionIds = []) {
-    console.log(this)
-    const {sectionId, productUrl} = this.dataset['SectionId'];
+    const {sectionId, productUrl} = this.dataset;
 
     const url = new URL(productUrl);
     sectionId ? url.searchParams.set("sectionId", sectionId) : "";
