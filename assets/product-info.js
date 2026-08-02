@@ -27,7 +27,7 @@ class ProductInfo extends HTMLElement {
   #updateSection(optionIds = []) {
     const {sectionId, productUrl} = this.dataset;
 
-    const url = new URL(productUrl);
+    const url = new URL(`${location.origin}${productUrl}`);
     sectionId ? url.searchParams.set("sectionId", sectionId) : "";
     sectionId ? url.searchParams.set("option_values", optionIds.join(",")) : "";
 
@@ -57,7 +57,7 @@ class ProductInfo extends HTMLElement {
   }
 
   #replaceState(productUrl, variantId) {
-    const url = new URL(productUrl);
+    const url = new URL(`${location.origin}${productUrl}`);
 
     if(variantId) {
       url.searchParams.set('variant', variantId)
