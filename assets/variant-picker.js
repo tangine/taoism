@@ -6,6 +6,7 @@ class VariantPicker extends HTMLElement{
 
   connectedCallback(){
     this.addEventListener("change", this.#onInputChange.bind(this));
+    console.log("++++++++++++")
   }
 
   disconnectedCallback(){
