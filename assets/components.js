@@ -154,8 +154,11 @@ class ProductForm extends HTMLElement {
       method: "POST",
       body: formData
     }).then(response => response.json())
-    .then(json => {
-      console.log(json);
+    .then(response => {
+      if(response.status) {
+
+      }
+      console.log(response);
     }).catch(error => {
       console.log(error);
     })
