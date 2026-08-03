@@ -1,5 +1,8 @@
+
+
 {% liquid
   assign product_form_id = "product-form-" | append: section.id
+  assign product = product | default: closest.product
 %}
 
 <div>
