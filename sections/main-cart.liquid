@@ -25,13 +25,13 @@
           <tbody>
             {% for item in cart.items %}
               <tr class="cart-item">
-                <td>
+                <td class="cart-item__image">
                   <img src="{{ item.image | asset_url }}" alt="" style="object-fit: contain;">
                 </td>
-                <td>{{ item.title }}</td>
-                <td>{{ item.price | money }}</td>
-                <td>{% render 'quantity-input', quantity: item.quantity %}</td>
-                <td>{{ item.final_line_price | money }}</td>
+                <td class="cart-item__info">{{ item.title }}</td>
+                <td class="cart-item__price">{{ item.price | money }}</td>
+                <td class="cart-item__quantity">{% render 'quantity-input', quantity: item.quantity %}</td>
+                <td class="cart-item__amount">{{ item.final_line_price | money }}</td>
               </tr>
             {% endfor %}
           </tbody>
