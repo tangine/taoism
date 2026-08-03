@@ -36,7 +36,7 @@
                     <div class="cart-item__options">
                       {% for option_with_value in item.options_with_values %}
                         <div class="cart-item__option">
-                          <span class="cart-item__option-name">{{ option_with_value.name }}</span>
+                          <span class="cart-item__option-name">{{ option_with_value.name | append: ":" }}</span>
                           <span class="cart-item__option-value">{{ option_with_value.value }}</span>
                         </div>
                       {% endfor %}

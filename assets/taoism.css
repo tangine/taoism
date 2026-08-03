@@ -104,7 +104,7 @@ cart-info table {
 cart-info table th {
   border-bottom: 1px solid #333;
 }
-cart-info table .cart-item__title {
+cart-info table .cart-item__info {
   text-align: left;
 }
 cart-info table .cart-item__quantity {
