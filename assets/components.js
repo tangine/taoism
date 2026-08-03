@@ -138,7 +138,7 @@ class ProductForm extends HTMLElement {
   }
 
   connectedCallback() {
-    this.querySelector("button[type=submit][name=add-to-cart]").addEventListener("submit", this.#onSubmit.bind(this));
+    this.querySelector("button[type='submit'][name='add-to-cart']").addEventListener("submit", this.#onSubmit.bind(this));
   }
 
   #onSubmit(event) {
