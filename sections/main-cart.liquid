@@ -24,7 +24,7 @@
           </thead>
           <tbody>
             {% for item in cart.items %}
-              <tr>
+              <tr class="cart-item">
                 <td>{{ item.title }}</td>
                 <td>{{ item.price | money }}</td>
                 <td>{% render 'quantity-input', quantity: item.quantity %}</td>
@@ -33,6 +33,7 @@
             {% endfor %}
           </tbody>
         </table>
+        <div>{{ cart.total_price | money }}</div>
       {% endunless %}
     </cart-info>
   </div>
