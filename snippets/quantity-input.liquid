@@ -8,7 +8,7 @@
   <button class="quantity__button quantity__butoon-minus" name="minus" type="button">
     <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
   </button>
-  <input type="number" class="quantity__input" {% unless max == null %} max = "{{ max }}" {% endunless %}
+  <input type="number" class="quantity__input" name="quantity" {% unless max == null %} max = "{{ max }}" {% endunless %}
          data-quantity="{{ quantity }}"
          value="{{ quantity }}"
          min="{{ min }}"
