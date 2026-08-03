@@ -177,9 +177,6 @@ if(!customElements.get('media-gallery')) {
   customElements.define('media-gallery', MediaGallery);
 }
 
-if(!customElements.get('cart-item')) {
-  customElements.define('cart-item', CartItem);
-}
 
 class QuantityInput extends HTMLElement {
   quantityInput = undefined;
