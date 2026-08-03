@@ -5,3 +5,16 @@
     }
   }
 </script>
+
+<script type="module" src="{{ 'components.js' | asset_url }}"></script>
+
+<script>
+  window.routes = {
+    cart_add_url: '{{ routes.cart_add_url }}',
+    cart_change_url: '{{ routes.cart_change_url }}',
+    cart_update_url: '{{ routes.cart_update_url }}',
+    cart_url: '{{ routes.cart_url }}',
+    predictive_search_url: '{{ routes.predictive_search_url }}',
+    search_url: '{{ routes.search_url }}',
+  };
+</script>

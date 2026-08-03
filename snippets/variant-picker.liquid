@@ -7,7 +7,6 @@
 
 {% unless product.has_only_default_variant %}
   <variant-picker class="product-variant-picker" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}" data-product-url="{{ product.url }}">
-    <script type="module" src="{{ 'variant-picker.js' | asset_url }}"></script>
     <script data-selected-variant>
       {{ current_variant | json }}
     </script>

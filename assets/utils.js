@@ -1,3 +1,29 @@
+let subscribers = {};
+
+export function subscribe(eventName, callback) {
+  if (subscribers[eventName] === undefined) {
+    subscribers[eventName] = [];
+  }
+
+  subscribers[eventName] = [...subscribers[eventName], callback];
+
+  return function unsubscribe() {
+    subscribers[eventName] = subscribers[eventName].filter((cb) => {
+      return cb !== callback;
+    });
+  };
+}
+
+export function publish(eventName, data) {
+  if (subscribers[eventName]) {
+    const promises = subscribers[eventName]
+      .map((callback) => callback(data))
+    return Promise.all(promises);
+  } else {
+    return Promise.resolve()
+  }
+}
+
 /**
  * Creates a debounced function that delays calling the provided function (fn)
  * until after wait milliseconds have elapsed since the last time
@@ -54,3 +80,6 @@ export function throttle(fn, delay = 200) {
 
   return /** @type {T & { cancel(): void }} */ (throttled);
 }
+
+
+
