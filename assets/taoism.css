@@ -98,4 +98,8 @@
   background: black;
 }
 
+.cart-item td {
+  vertical-align: top;
+}
+
 /*# sourceMappingURL=taoism.css.map */
