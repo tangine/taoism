@@ -104,6 +104,9 @@ cart-info table {
 cart-info table th {
   border-bottom: 1px solid #333;
 }
+cart-info table .cart-item__image {
+  width: 110px;
+}
 cart-info table .cart-item__info {
   text-align: left;
 }
@@ -113,7 +116,8 @@ cart-info table .cart-item__quantity {
 cart-info table .cart-item__total {
   text-align: right;
 }
-cart-info table td {
+cart-info table tbody td {
+  padding-top: 1em;
   vertical-align: top;
 }
 

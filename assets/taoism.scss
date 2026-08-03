@@ -129,6 +129,10 @@ cart-info {
       border-bottom: 1px solid #333;
     }
 
+    .cart-item__image {
+      width: 110px;
+    }
+
     .cart-item__info {
       text-align: left;
     }
@@ -141,8 +145,11 @@ cart-info {
       text-align: right;
     }
 
-    td {
-      vertical-align: top;
+    tbody  {
+      td {
+        padding-top: 1em;
+        vertical-align: top;
+      }
     }
   }
 
