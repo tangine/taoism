@@ -33,14 +33,16 @@
                 <td class="cart-item__info">
                   <div class="cart-item__title">{{ item.title }}</div>
                   <div class="cart-item__price">{{ item.price | money }}</div>
-                  <div class="cart-item__options">
-                    {% for option_with_value in item.options_with_values %}
-                      <div class="cart-item__option">
-                        <span class="cart-item__option-name">{{ option_with_value.name }}</span>
-                        <span class="cart-item__option-value">{{ option_with_value.value }}</span>
-                      </div>
-                    {% endfor %}
-                  </div>
+                  {% unless item.product.has_only_default_variant %}
+                    <div class="cart-item__options">
+                      {% for option_with_value in item.options_with_values %}
+                        <div class="cart-item__option">
+                          <span class="cart-item__option-name">{{ option_with_value.name }}</span>
+                          <span class="cart-item__option-value">{{ option_with_value.value }}</span>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endunless %}
                 </td>
                 <td class="cart-item__quantity">{% render 'quantity-input', quantity: item.quantity %}</td>
                 <td class="cart-item__total">
@@ -50,7 +52,7 @@
             {% endfor %}
           </tbody>
         </table>
-        <div>{{ cart.total_price | money }}</div>
+      <div>{{ cart.total_price | money }}</div>
       {% endunless %}
     </cart-info>
   </div>
