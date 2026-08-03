@@ -132,6 +132,24 @@ if(!customElements.get("product-info")){
   customElements.define("product-info", ProductInfo);
 }
 
+class ProductForm extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.querySelector("button[type=submit][name=add-to-cart]").addEventListener("submit", this.#onSubmit.bind(this));
+  }
+
+  #onSubmit(event) {
+    event.preventDefault();
+  }
+}
+
+if(!customElements.get("product-form")){
+  customElements.define("product-form", ProductForm);
+}
+
 class MediaGallery extends HTMLElement {
 
 }
