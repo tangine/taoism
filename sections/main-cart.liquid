@@ -12,14 +12,28 @@
 <div id="{{ section.id }}" class="relative">
   <div class="section-inner">
     <cart-info>
-      {% for item in cart.items %}
-        <cart-item>
-          <div>{{ item.title }}</div>
-          <div>{{ item.price | money }}</div>
-          {% render 'quantity-input', quantity: item.quantity  %}
-          <div>{{ item.final_line_price | money }}</div>
-        </cart-item>
-      {% endfor %}
+      {% unless cart.empty %}
+        <table>
+          <thead>
+          <tr>
+            <th>产品</th>
+            <th>价格</th>
+            <th>数量</th>
+            <th>总计</th>
+          </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price | money }}</td>
+                <td>{% render 'quantity-input', quantity: item.quantity %}</td>
+                <td>{{ item.final_line_price }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endunless %}
     </cart-info>
   </div>
 </div>
