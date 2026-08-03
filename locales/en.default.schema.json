@@ -10,7 +10,8 @@
 {
   "categories": {
     "layout": "layout",
-    "product": "Product"
+    "product": "Product",
+    "cart": "Cart"
   },
   "sections": {
     "divider": "Divider",

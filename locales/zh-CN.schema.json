@@ -10,7 +10,8 @@
 {
   "categories": {
     "layout": "布局",
-    "product": "产品"
+    "product": "产品",
+    "cart": "购物车"
   },
   "sections": {
     "404": "404",
