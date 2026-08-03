@@ -144,6 +144,10 @@ class ProductForm extends HTMLElement {
   #onSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
+
+    const form = this.querySelector("form");
+    const formData = new FormData(form);
+    console.log(formData);
   }
 }
 
