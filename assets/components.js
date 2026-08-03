@@ -148,6 +148,16 @@ class ProductForm extends HTMLElement {
     const form = this.querySelector("form");
     const formData = new FormData(form);
     console.log(formData);
+
+    fetch(window.routes.cart_add_url, {
+      method: "POST",
+      body: formData
+    }).then(response => response.json())
+    .then(json => {
+      console.log(json);
+    }).catch(error => {
+      console.log(error);
+    })
   }
 }
 
