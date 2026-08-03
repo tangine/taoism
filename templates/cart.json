@@ -9,17 +9,18 @@
  */
 {
   "sections": {
-    "slideshow_9rKDFy": {
-      "type": "slideshow",
-      "name": "t:sections.slideshow",
+    "main_cart_XeT8Xn": {
+      "type": "main-cart",
+      "name": "t:sections.cart",
       "settings": {
         "container": "default",
+        "only_show_selected_variant_image": false,
         "padding_top": 20,
         "padding_bottom": 20
       }
     }
   },
   "order": [
-    "slideshow_9rKDFy"
+    "main_cart_XeT8Xn"
   ]
 }
