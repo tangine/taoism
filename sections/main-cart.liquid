@@ -28,7 +28,7 @@
                 <td>{{ item.title }}</td>
                 <td>{{ item.price | money }}</td>
                 <td>{% render 'quantity-input', quantity: item.quantity %}</td>
-                <td>{{ item.final_line_price }}</td>
+                <td>{{ item.final_line_price | money }}</td>
               </tr>
             {% endfor %}
           </tbody>
