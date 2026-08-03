@@ -150,7 +150,7 @@ class ProductForm extends HTMLElement {
     formData.append("quantity", String(1));
     console.log(formData);
 
-    fetch(window.routes.cart_add_url, {
+    fetch(window.routes.cart_add_url + ".js", {
       method: "POST",
       body: formData
     }).then(response => response.json())
