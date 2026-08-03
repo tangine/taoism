@@ -26,7 +26,9 @@
             {% for item in cart.items %}
               <tr class="cart-item">
                 <td class="cart-item__image">
-                  <img src="{{ item.image | asset_url }}" alt="" style="object-fit: contain;">
+                  <div>
+                    <img src="{{ item.image | asset_url }}" alt="" style="object-fit: contain;" width="150" height="150">
+                  </div>
                 </td>
                 <td class="cart-item__info">{{ item.title }}</td>
                 <td class="cart-item__price">{{ item.price | money }}</td>
