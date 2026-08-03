@@ -143,6 +143,7 @@ class ProductForm extends HTMLElement {
 
   #onSubmit(event) {
     event.preventDefault();
+    event.stopPropagation();
   }
 }
 
