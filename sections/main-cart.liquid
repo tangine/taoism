@@ -15,9 +15,9 @@
       {% for item in cart.items %}
         <cart-item>
           <div>{{ item.title }}</div>
-          <div>{{ item.price }}</div>
+          <div>{{ item.price | money }}</div>
           {% render 'quantity-input', quantity: item.quantity  %}
-          <div>{{ item.final_line_price }}</div>
+          <div>{{ item.final_line_price | money }}</div>
         </cart-item>
       {% endfor %}
     </cart-info>
