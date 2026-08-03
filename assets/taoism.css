@@ -116,6 +116,9 @@ cart-info table .cart-item__quantity {
 cart-info table .cart-item__total {
   text-align: right;
 }
+cart-info table .cart-item__options .cart-item__option {
+  display: flex;
+}
 cart-info table tbody td {
   padding-top: 1em;
   vertical-align: top;
