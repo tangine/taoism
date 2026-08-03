@@ -98,7 +98,13 @@
   background: black;
 }
 
-.cart-item td {
+cart-info table {
+  width: 100%;
+}
+cart-info table th {
+  border-bottom: 1px solid #333;
+}
+cart-info table td {
   vertical-align: top;
 }
 

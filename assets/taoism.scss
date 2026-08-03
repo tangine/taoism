@@ -121,8 +121,17 @@
   }
 }
 
-.cart-item {
-  td {
-    vertical-align: top;
+cart-info {
+  table {
+    width: 100%;
+
+    th {
+      border-bottom: 1px solid #333;
+    }
+
+    td {
+      vertical-align: top;
+    }
   }
+
 }
