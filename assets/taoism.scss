@@ -129,6 +129,18 @@ cart-info {
       border-bottom: 1px solid #333;
     }
 
+    .cart-item__title {
+      text-align: left;
+    }
+
+    .cart-item__quantity {
+      text-align: center;
+    }
+
+    .cart-item__total {
+      text-align: right;
+    }
+
     td {
       vertical-align: top;
     }
