@@ -30,10 +30,14 @@
                     <img src="{{ item.image | image_url }}" alt="" style="object-fit: contain;" width="100" height="100">
                   </div>
                 </td>
-                <td class="cart-item__info">{{ item.title }}</td>
-                <td class="cart-item__price">{{ item.price | money }}</td>
+                <td class="cart-item__info">
+                  <div class="cart-item__title">{{ item.title }}</div>
+                  <div class="cart-item__price">{{ item.price | money }}</div>
+                </td>
                 <td class="cart-item__quantity">{% render 'quantity-input', quantity: item.quantity %}</td>
-                <td class="cart-item__amount">{{ item.final_line_price | money }}</td>
+                <td class="cart-item__total">
+                  <div class="cart-item__amount">{{ item.final_line_price | money }}</div>
+                </td>
               </tr>
             {% endfor %}
           </tbody>
