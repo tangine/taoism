@@ -17,10 +17,11 @@
 
 .nav{
   font-weight: bold;
+  border-bottom: 1px solid transparent;
   .nav-item {
     &[data-active="true"],
     &:hover {
-      border-bottom: 1px solid #333;
+      border-color: #333;
     }
   }
 }
