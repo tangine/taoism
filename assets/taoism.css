@@ -63,7 +63,7 @@
 }
 .quantity-editor .quantity-editor__input {
   text-align: center;
-  width: 3.5em;
+  width: 2.5em;
   min-width: 0;
   appearance: textfield;
   -moz-appearance: textfield;
