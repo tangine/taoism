@@ -16,10 +16,12 @@
 
 .nav {
   font-weight: bold;
+}
+.nav .nav-item {
   border-bottom: 1px solid transparent;
 }
 .nav .nav-item[data-active=true], .nav .nav-item:hover {
-  border-bottom: 1px solid #cccccc;
+  border-color: #cccccc;
 }
 
 .svg-wrapper {
