@@ -134,5 +134,12 @@ cart-info table tbody td {
   transform: scale(0.95);
   opacity: 0.9;
 }
+.quantity-editor .quantity-editor__input input {
+  width: 3em;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  text-align: center;
+}
 
 /*# sourceMappingURL=taoism.css.map */

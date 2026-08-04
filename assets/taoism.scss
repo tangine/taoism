@@ -162,13 +162,22 @@ cart-info {
 }
 
 .quantity-editor {
-
   .quantity-editor__button {
     padding: .75em;
 
     :active {
       transform: scale(.95);
       opacity: 0.9;
+    }
+  }
+
+  .quantity-editor__input {
+    input {
+      width: 3em;
+      appearance: textfield;
+      -moz-appearance: textfield;
+      -webkit-appearance: textfield;
+      text-align: center;
     }
   }
 }
