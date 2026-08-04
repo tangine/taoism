@@ -18,6 +18,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 input,
 button,
 textarea,
