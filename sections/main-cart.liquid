@@ -43,7 +43,26 @@
                     </div>
                   {% endunless %}
                 </td>
-                <td class="cart-item__quantity">{% render 'quantity-editor', quantity: item.quantity, can_remove: true %}</td>
+                <td class="cart-item__quantity">
+                  <div>
+                    <quantity-input
+                      data-index="{{ forloop.index }}"
+                      data-variant="{{ item.variant_id }}">
+                      <button class="quantity__button quantity__butoon-minus" name="minus" type="button">
+                        <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+                      </button>
+                      <input type="number" class="quantity__input" name="quantity" {% unless max == null %} max = "{{ max }}" {% endunless %}
+                             data-quantity="{{ quantity }}"
+                             value="{{ quantity }}"
+                             min="{{ min }}"
+                             step="{{ step }}"
+                      />
+                      <button class="quantity__button quantity__butoon-plus" name="plus" type="button">
+                        <span class="svg-wrapper">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+                      </button>
+                    </quantity-input>
+                  </div>
+                </td>
                 <td class="cart-item__total">
                   <div class="cart-item__amount">{{ item.final_line_price | money }}</div>
                 </td>
