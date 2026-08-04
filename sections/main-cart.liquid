@@ -53,7 +53,7 @@
                       </button>
                       <input type="number" class="quantity-editor__input" name="quantity" {% unless max == null %} max = "{{ max }}" {% endunless %}
                              data-quantity="{{ quantity }}"
-                             value="{{ quantity }}"
+                             value="{{ item.quantity }}"
                              min="{{ min }}"
                              step="{{ step }}"
                       />
