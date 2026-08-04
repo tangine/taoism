@@ -21,7 +21,7 @@
   .nav-item {
     &[data-active="true"],
     &:hover {
-      border-color: #333;
+      border-bottom: 1px solid #cccccc;
     }
   }
 }
