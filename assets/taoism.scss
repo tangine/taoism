@@ -164,6 +164,7 @@ cart-info {
 .quantity-editor {
   .quantity-editor__button {
     padding: .75em;
+    cursor: pointer;
 
     :active {
       transform: scale(.95);
