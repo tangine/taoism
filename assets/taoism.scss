@@ -171,6 +171,10 @@ cart-info {
     }
   }
 
+  .quantity-editor__quantity {
+    border: 1px solid #cccccc;
+  }
+
   .quantity-editor__input {
     input {
       width: 3em;

@@ -134,6 +134,9 @@ cart-info table tbody td {
   transform: scale(0.95);
   opacity: 0.9;
 }
+.quantity-editor .quantity-editor__quantity {
+  border: 1px solid #cccccc;
+}
 .quantity-editor .quantity-editor__input input {
   width: 3em;
   appearance: textfield;
