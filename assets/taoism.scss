@@ -36,7 +36,7 @@
   height: 1em;
 }
 
-.quantity {
+.quantity-editor {
   display: inline-flex;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -157,32 +157,6 @@ cart-info {
         padding-top: 1em;
         vertical-align: top;
       }
-    }
-  }
-}
-
-.quantity-editor {
-  .quantity-editor__button {
-    padding: .75em;
-    cursor: pointer;
-
-    :active {
-      transform: scale(.95);
-      opacity: 0.9;
-    }
-  }
-
-  .quantity-editor__quantity {
-    border: 1px solid #cccccc;
-  }
-
-  .quantity-editor__input {
-    input {
-      width: 3em;
-      text-align: center;
-      appearance: textfield;
-      -moz-appearance: textfield;
-      -webkit-appearance: textfield;
     }
   }
 }

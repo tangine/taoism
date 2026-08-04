@@ -34,16 +34,16 @@
   height: 1em;
 }
 
-.quantity {
+.quantity-editor {
   display: inline-flex;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.quantity:has(input:focus) {
+.quantity-editor:has(input:focus) {
   border-color: #409eff;
   box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
 }
-.quantity .quantity-editor__button {
+.quantity-editor .quantity-editor__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,17 +51,17 @@
   padding: 0.75em;
   background: transparent;
 }
-.quantity .quantity-editor__button:active {
+.quantity-editor .quantity-editor__button:active {
   transform: scale(0.95);
 }
-.quantity .quantity-editor__button:active:disabled {
+.quantity-editor .quantity-editor__button:active:disabled {
   transform: none;
 }
-.quantity .quantity-editor__button:disabled {
+.quantity-editor .quantity-editor__button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.quantity .quantity-editor__input {
+.quantity-editor .quantity-editor__input {
   text-align: center;
   width: 3.5em;
   min-width: 0;
@@ -125,25 +125,6 @@ cart-info table .cart-item__options .cart-item__option {
 cart-info table tbody td {
   padding-top: 1em;
   vertical-align: top;
-}
-
-.quantity-editor .quantity-editor__button {
-  padding: 0.75em;
-  cursor: pointer;
-}
-.quantity-editor .quantity-editor__button :active {
-  transform: scale(0.95);
-  opacity: 0.9;
-}
-.quantity-editor .quantity-editor__quantity {
-  border: 1px solid #cccccc;
-}
-.quantity-editor .quantity-editor__input input {
-  width: 3em;
-  text-align: center;
-  appearance: textfield;
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
 }
 
 /*# sourceMappingURL=taoism.css.map */
