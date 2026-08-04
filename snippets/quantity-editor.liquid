@@ -1,0 +1,27 @@
+{% liquid
+  assign quantity = quantity | default: 1
+  assign min = min | default: 1
+  assign step = step | default: 1
+  assign can_remove = can_remove | default: false
+%}
+
+<quantity-editor>
+  <button class="quantity__button quantity__button--minus" type="button" name="minus">
+    <span class="svg-wrapper">{{ 'icon-minus.svg' | inline_asset_content }}</span>
+  </button>
+  <input type="number"
+         name="quantity"
+         class="quantity__input"
+         value="{{ quantity }}"
+         min="{{ min }}"
+         step="{{ step }}"
+         {% if max %}max="{{ max }}"{% endif %} />
+  <button class="quantity__button quantity__button--plus" type="button" name="plus">
+    <span class="svg-wrapper">{{ 'icon-plus.svg' | inline_asset_content }}</span>
+  </button>
+  {% if can_remove %}
+    <button class="quantity__button quantity__button--remove" type="button" name="remove">
+      <span class="svg-wrapper">{{ 'icon-delete.svg' | inline_asset_content }}</span>
+    </button>
+  {% endif %}
+</quantity-editor>

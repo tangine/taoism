@@ -256,6 +256,45 @@ if(!customElements.get("quantity-input")){
   customElements.define("quantity-input", QuantityInput);
 }
 
+class QuantityEditor extends HTMLElement {
+  quantityInput = undefined;
+  minusButton = undefined;
+  plusButton = undefined;
+  removeButton = undefined;
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.querySelectorAll("button[type='button']").forEach(button => {
+      button.addEventListener("click", this.#onButtonClick.bind(this));
+    })
+  }
+
+  #onButtonClick(event) {
+    event.preventDefault();
+
+  }
+
+  #onInputChange(event) {
+    event.preventDefault();
+  }
+
+  #updateQuantity(quantity = null) {
+    this.dispatchEvent(new CustomEvent('quantity:change', {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+      detail: {
+        quantity: quantity == null ? this.quantityInput.value : quantity
+      }
+    }))
+  }
+}
+if(!customElements.get("quantity-editor")){
+  customElements.define("quantity-editor", QuantityEditor);
+}
+
 
 class SlideShow extends HTMLElement {
   constructor() {
@@ -277,6 +316,21 @@ class CartIcon extends HTMLElement {
 
 if(!customElements.get('cart-icon')) {
   customElements.define('cart-icon', CartIcon);
+}
+
+class CartRemove extends HTMLElement {
+  constructor() {
+    super();
+
+    this.addEventListener("click", event => {
+      event.preventDefault();
+      this.dispatchEvent(new CustomEvent('cart-remove', {
+        bubbles: true,
+        cancelable: true,
+        detail: {}
+      }));
+    })
+  }
 }
 
 class CartItem extends HTMLElement {

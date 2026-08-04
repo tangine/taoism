@@ -43,7 +43,7 @@
                     </div>
                   {% endunless %}
                 </td>
-                <td class="cart-item__quantity">{% render 'quantity-input', quantity: item.quantity %}</td>
+                <td class="cart-item__quantity">{% render 'quantity-editor', quantity: item.quantity, can_remove: true %}</td>
                 <td class="cart-item__total">
                   <div class="cart-item__amount">{{ item.final_line_price | money }}</div>
                 </td>
