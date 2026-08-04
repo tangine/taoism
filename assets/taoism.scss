@@ -179,10 +179,10 @@ cart-info {
   .quantity-editor__input {
     input {
       width: 3em;
+      text-align: center;
       appearance: textfield;
       -moz-appearance: textfield;
       -webkit-appearance: textfield;
-      text-align: center;
     }
   }
 }
