@@ -46,7 +46,7 @@
     box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
   }
 
-  .quantity__button {
+  .quantity-editor__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@
     }
   }
 
-  .quantity__input {
+  .quantity-editor__input {
     text-align: center;
     width: 3.5em;
     min-width: 0;

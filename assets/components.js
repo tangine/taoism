@@ -178,7 +178,7 @@ if(!customElements.get('media-gallery')) {
 }
 
 
-class QuantityInput extends HTMLElement {
+class QuantityEditor extends HTMLElement {
   quantityInput = undefined;
   minusButton = undefined;
   plusButton = undefined;
@@ -200,7 +200,7 @@ class QuantityInput extends HTMLElement {
   }
 
   #onButtonClick(event) {
-    const button = event.target.closest("button.quantity__button");
+    const button = event.target.closest("button.quantity-editor__button");
     const name = button.getAttribute("name");
     if(name === 'plus') {
       this.quantityInput.stepUp()
@@ -252,48 +252,10 @@ class QuantityInput extends HTMLElement {
   }
 }
 
-if(!customElements.get("quantity-input")){
-  customElements.define("quantity-input", QuantityInput);
-}
-
-class QuantityEditor extends HTMLElement {
-  quantityInput = undefined;
-  minusButton = undefined;
-  plusButton = undefined;
-  removeButton = undefined;
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.querySelectorAll("button[type='button']").forEach(button => {
-      button.addEventListener("click", this.#onButtonClick.bind(this));
-    })
-  }
-
-  #onButtonClick(event) {
-    event.preventDefault();
-
-  }
-
-  #onInputChange(event) {
-    event.preventDefault();
-  }
-
-  #updateQuantity(quantity = null) {
-    this.dispatchEvent(new CustomEvent('quantity:change', {
-      bubbles: true,
-      cancelable: true,
-      composed: true,
-      detail: {
-        quantity: quantity == null ? this.quantityInput.value : quantity
-      }
-    }))
-  }
-}
 if(!customElements.get("quantity-editor")){
   customElements.define("quantity-editor", QuantityEditor);
 }
+
 
 
 class SlideShow extends HTMLElement {
