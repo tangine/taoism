@@ -21,7 +21,7 @@
   border-bottom: 1px solid transparent;
 }
 .nav .nav-item[data-active=true], .nav .nav-item:hover {
-  border-color: #cccccc;
+  border-color: #333;
 }
 
 .svg-wrapper {
