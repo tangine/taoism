@@ -101,7 +101,7 @@ button {
 .quantity-editor {
   display: inline-flex;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 100px;
 
   &:has(input:focus) {
     border-color: #409eff;
