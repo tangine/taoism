@@ -127,7 +127,6 @@ class ProductInfo extends HTMLElement {
     console.log("addToCart");
   }
 }
-
 if(!customElements.get("product-info")){
   customElements.define("product-info", ProductInfo);
 }
@@ -164,7 +163,6 @@ class ProductForm extends HTMLElement {
     })
   }
 }
-
 if(!customElements.get("product-form")){
   customElements.define("product-form", ProductForm);
 }
@@ -172,7 +170,6 @@ if(!customElements.get("product-form")){
 class MediaGallery extends HTMLElement {
 
 }
-
 if(!customElements.get('media-gallery')) {
   customElements.define('media-gallery', MediaGallery);
 }
@@ -278,7 +275,6 @@ class QuantityEditor extends HTMLElement {
     }));
   }
 }
-
 if(!customElements.get("quantity-editor")){
   customElements.define("quantity-editor", QuantityEditor);
 }
@@ -291,7 +287,6 @@ class SlideShow extends HTMLElement {
     this.currentIndex = 0;
   }
 }
-
 if(!customElements.get('slide-show')) {
   customElements.define('slide-show', SlideShow);
 }
@@ -302,7 +297,6 @@ class CartIcon extends HTMLElement {
     super();
   }
 }
-
 if(!customElements.get('cart-icon')) {
   customElements.define('cart-icon', CartIcon);
 }
@@ -340,7 +334,6 @@ class CartItem extends HTMLElement {
 
   }
 }
-
 if(!customElements.get('cart-item')) {
   customElements.define('cart-item', CartItem);
 }
@@ -350,7 +343,6 @@ class CartInfo extends HTMLElement {
     super();
   }
 }
-
 if(!customElements.get('cart-info')) {
   customElements.define('cart-info', CartInfo);
 }
@@ -360,7 +352,6 @@ class AccountIcon extends HTMLElement {
     super();
   }
 }
-
 if(!customElements.get('account-icon')) {
   customElements.define('account-icon', AccountIcon);
 }

@@ -1,0 +1,72 @@
+button {
+
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tg-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.loading {
+  .tg-icon {
+    animation: rotating 0.6s linear infinite;
+  }
+}
+
+.tg-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  line-height: 1;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  gap: 0.375em;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.1s;
+
+  &:hover {
+    color: #409eff;
+    border-color: #c6e2ff;
+  }
+
+  &.tg-button-primary {
+    color: white;
+    border-color: #409eff;
+    background-color: #409eff;
+
+    &:hover {
+      border-color: #79bbff;
+      background: #79bbff;
+    }
+
+    &.disabled,
+    &:disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.6;
+      //border-color: #a0cfff;
+      //background: #a0cfff;
+    }
+  }
+}

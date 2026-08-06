@@ -1,0 +1,39 @@
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375em;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.1s;
+  background: darkcyan;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+
+  &:active:not(:disabled),
+  &:active:not(.disabled) {
+    transform: scale(0.97);
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.5;
+    transform: none;
+    cursor: not-allowed;
+
+    * {
+      pointer-events: none
+    }
+  }
+}

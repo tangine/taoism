@@ -1,5 +1,197 @@
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375em;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.1s;
+  background: darkcyan;
+}
+button svg {
+  width: 1em;
+  height: 1em;
+}
+button:active:not(:disabled), button:active:not(.disabled) {
+  transform: scale(0.97);
+}
+button:hover {
+  opacity: 0.85;
+}
+button.disabled, button:disabled {
+  opacity: 0.5;
+  transform: none;
+  cursor: not-allowed;
+}
+button.disabled *, button:disabled * {
+  pointer-events: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.static {
+  position: static;
+}
+
+.normal {
+  font-style: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.oblique {
+  font-style: oblique;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.extra-light {
+  font-weight: 200;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extra-bold {
+  font-weight: 800;
+}
+
+.black {
+  font-weight: 900;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 :root {
-  --icon-stroke-width: 1.5 ;
+  --icon-stroke-width: 1.5;
+  --icon-size: 1.5;
 }
 
 .relative {
@@ -9,27 +201,11 @@
 .svg-icon {
   display: inline-block;
   margin-top: 2px;
+  pointer-events: none;
 }
 .svg-icon svg {
   width: 1em;
   height: 1em;
-}
-
-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-  border: 1px solid #dcdcdc;
-  border-radius: 4px;
-  background: #ffffff;
-  cursor: pointer;
-  gap: 0.375em;
-  white-space: nowrap;
-  user-select: none;
-  text-align: center;
-  vertical-align: middle;
-  transition: 0.1s;
 }
 
 .pagination {

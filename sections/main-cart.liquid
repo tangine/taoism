@@ -47,6 +47,8 @@
                   <div>
                     <quantity-editor class="quantity-editor"
                       data-index="{{ forloop.index }}"
+                      data-id="{{ item.id }}"
+                      data-key="{{ item.key }}"
                       data-variant="{{ item.variant_id }}">
                       <button class="quantity-editor__button quantity-editor__butoon-minus" name="minus" type="button">
                         {% render 'svg-icon', icon: 'icon-minus.svg' %}

@@ -1,0 +1,39 @@
+$styles: normal, italic, oblique;
+@each $style in $styles {
+  .#{$style} {
+    font-style: $style;
+  }
+}
+
+$decorations: underline, overline, line-through;
+@each $decoration in $decorations {
+  .#{$decoration} {
+    text-decoration: $decoration;
+  }
+}
+
+$transforms: capitalize, uppercase, lowercase;
+@each $transform in $transforms {
+  .#{$transform} {
+    text-transform: $transform;
+  }
+}
+
+
+$weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900
+);
+
+@each $key, $value in $weights {
+  .#{$key} {
+    font-weight: $value;
+  }
+}

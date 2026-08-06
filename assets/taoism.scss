@@ -1,5 +1,12 @@
+@use "button";
+@use "flex";
+@use "position";
+@use "text";
+@use "animation";
+
 :root {
-  --icon-stroke-width: 1.5
+  --icon-stroke-width: 1.5;
+  --icon-size: 1.5;
 }
 
 .relative {
@@ -9,27 +16,12 @@
 .svg-icon {
   display: inline-block;
   margin-top: 2px;
+  pointer-events: none;
+
   svg {
     width: 1em;
     height: 1em;
   }
-}
-
-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-  border: 1px solid #dcdcdc;
-  border-radius: 4px;
-  background: #ffffff;
-  cursor: pointer;
-  gap: 0.375em;
-  white-space: nowrap;
-  user-select: none;
-  text-align: center;
-  vertical-align: middle;
-  transition: 0.1s;
 }
 
 .pagination {
