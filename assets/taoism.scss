@@ -40,6 +40,10 @@
     &.disabled {
       cursor: not-allowed;
 
+      &:hover {
+        background: transparent;
+      }
+
       a {
         pointer-events: none;
       }
