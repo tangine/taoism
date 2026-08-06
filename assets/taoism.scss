@@ -14,17 +14,12 @@
   .pagination-item {
     width: 2em;
     height: 2em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     color: #1c1f23;
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
 
     a {
-      width: 2em;
-      height: 2em;
       display: inline-flex;
       justify-content: center;
       align-items: center;
