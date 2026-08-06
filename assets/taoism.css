@@ -99,7 +99,6 @@ button {
   box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
 }
 .quantity-editor .quantity-editor__button {
-  cursor: pointer;
   padding: 0.75em;
   border: none;
   background: transparent;
