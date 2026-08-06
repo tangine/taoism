@@ -17,6 +17,7 @@
 
 button {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   line-height: 1;
   border: 1px solid #dcdcdc;
