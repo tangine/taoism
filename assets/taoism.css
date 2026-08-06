@@ -20,6 +20,7 @@
   background: rgba(46, 50, 56, 0.4980392157);
   user-select: none;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
 }
 .pagination .pagination__list .pagination__item.pagination__item-active {
