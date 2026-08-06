@@ -12,6 +12,21 @@
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+
+    .pagination__item {
+      width: 2em;
+      height: 2em;
+      color: #1c1f23;
+      background: #2e32387f;
+
+      &:hover {
+      }
+
+      &.pagination__item-active {
+        color: #0064fa;
+        background: #eaf5ff;
+      }
+    }
   }
 }
 

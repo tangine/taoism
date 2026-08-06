@@ -178,10 +178,34 @@ if(!customElements.get('media-gallery')) {
 }
 
 
+class AddToCart extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.addEventListener("click", this.#onClick.bind(this));
+  }
+
+  disconnectedCallback() {
+
+  }
+
+  #onClick(event) {
+    event.preventDefault();
+    this.classList.toggle("loading", true);
+  }
+}
+if(!customElements.get('add-to-cart')) {
+  customElements.define('add-to-cart', AddToCart);
+}
+
+
 class QuantityEditor extends HTMLElement {
   quantityInput = undefined;
   minusButton = undefined;
   plusButton = undefined;
+  removeButton = undefined;
   constructor() {
     super();
   }
@@ -190,6 +214,7 @@ class QuantityEditor extends HTMLElement {
     this.quantityInput = this.querySelector("input[type='number']");
     this.minusButton = this.querySelector("button[name='minus']");
     this.plusButton = this.querySelector("button[name='plus']");
+    this.plusButton = this.querySelector("button[name='remove']");
 
     this.quantityInput.addEventListener("change", this.#onInputChange.bind(this))
     this.querySelectorAll("button").forEach(button => {
@@ -208,6 +233,8 @@ class QuantityEditor extends HTMLElement {
     } else if(name === 'minus') {
       console.log("-")
       this.quantityInput.stepDown()
+    } else if(name === 'remove') {
+      console.log("remove")
     }
 
     this.#validateQuantity()

@@ -3,14 +3,16 @@
     <ul class="pagination__list" role="list">
       {%- if paginate.previous -%}
         <li class="pagination__item pagination__item--prev">
-          <a href="{{ paginate.previous.url }}">
+          <a  href="{{ paginate.previous.url }}">
             {{- 'icon-chevron-left.svg' | inline_asset_content -}}
           </a>
         </li>
       {%- endif -%}
 
+
+
       {%- for part in paginate.parts -%}
-        <li class="pagination__item">
+        <li class="pagination__item {% if part.title == paginate.current_page %}pagination__item-active{% endif %}">
           {% if part.is_link %}
             <a href="{{ part.url }}">
               {{ part.title }}
