@@ -11,18 +11,17 @@
   flex-wrap: wrap;
 }
 .pagination .pagination-item {
-  width: 2em;
-  height: 2em;
   color: #1c1f23;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
 }
 .pagination .pagination-item a {
-  display: inline-block;
+  width: 2em;
+  height: 2em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
