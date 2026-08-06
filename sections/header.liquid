@@ -6,7 +6,7 @@
 {% endstyle %}
 
 <div id="{{ section.id }}" class="relative">
-  <div class="section-inner">
+  <div class="section-inner" style="display:flex;flex-direction:row;align-items:center;">
     <nav>
       <ul class="nav" style="display: flex;flex-direction: row;align-items: center;gap: 10px;">
         {% for link in section.settings.menu.links %}
@@ -18,7 +18,7 @@
         {% endfor %}
       </ul>
     </nav>
-    <div style="display: flex;flex-direction: row;align-items: center;gap: 10px;">
+    <div style="display: flex;flex-direction: row;align-items: center;gap: 10px;margin-left: auto;">
       <a href="/search">
         {% render 'svg-icon', icon: 'icon-search.svg' %}
       </a>
