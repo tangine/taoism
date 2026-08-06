@@ -54,7 +54,7 @@
                         {% render 'svg-icon', icon: 'icon-minus.svg' %}
                       </button>
                       <input type="number" class="quantity-editor__input" name="quantity" {% unless max == null %} max = "{{ max }}" {% endunless %}
-                             data-quantity="{{ quantity }}"
+                             data-quantity="{{ item.quantity }}"
                              value="{{ item.quantity }}"
                              min="1"
                              step="1"
