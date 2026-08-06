@@ -8,6 +8,7 @@
 
 .svg-icon {
   display: inline-block;
+  margin-top: 2px;
 }
 .svg-icon svg {
   width: 1em;
