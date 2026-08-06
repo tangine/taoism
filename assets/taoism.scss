@@ -39,10 +39,7 @@
     &:disabled,
     &.disabled {
       cursor: not-allowed;
-
-      &:hover {
-        background: transparent;
-      }
+      background: transparent;
 
       a {
         pointer-events: none;

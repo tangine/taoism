@@ -34,8 +34,6 @@
 }
 .pagination .pagination-item:disabled, .pagination .pagination-item.disabled {
   cursor: not-allowed;
-}
-.pagination .pagination-item:disabled:hover, .pagination .pagination-item.disabled:hover {
   background: transparent;
 }
 .pagination .pagination-item:disabled a, .pagination .pagination-item.disabled a {
