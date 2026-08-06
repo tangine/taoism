@@ -1,8 +1,7 @@
 {%- if paginate.pages > 1 -%}
-  <nav class="pagination">
-    <ul class="pagination__list" role="list">
+    <ul class="pagination" role="list">
       {%- if paginate.previous -%}
-        <li class="pagination__item pagination__item--prev">
+        <li class="pagination-item pagination-item--prev">
           <a  href="{{ paginate.previous.url }}">
             {{- 'icon-chevron-left.svg' | inline_asset_content -}}
           </a>
@@ -12,7 +11,7 @@
 
 
       {%- for part in paginate.parts -%}
-        <li class="pagination__item {% if part.title == paginate.current_page %}pagination__item-active{% endif %}">
+        <li class="pagination-item {% if part.title == paginate.current_page %}pagination-item-active{% endif %}">
           {% if part.is_link %}
             <a href="{{ part.url }}">
               {{ part.title }}
@@ -28,12 +27,11 @@
   {%- endfor -%}
 
   {%- if paginate.next -%}
-  <li class="pagination__item pagination__item--next">
+  <li class="pagination-item pagination-item--next">
     <a href="{{ paginate.next.url }}">
       {{- 'icon-chevron-right.svg' | inline_asset_content -}}
     </a>
   </li>
   {%- endif -%}
   </ul>
-  </nav>
 {%- endif -%}
