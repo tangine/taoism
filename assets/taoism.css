@@ -18,6 +18,9 @@
   height: 2em;
   color: #1c1f23;
   background: rgba(46, 50, 56, 0.4980392157);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
 }
 .pagination .pagination__list .pagination__item.pagination__item-active {
   color: #0064fa;

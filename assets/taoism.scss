@@ -18,6 +18,9 @@
       height: 2em;
       color: #1c1f23;
       background: #2e32387f;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
 
       &:hover {
       }
