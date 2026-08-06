@@ -10,7 +10,7 @@
 
     <li class="pagination-item pagination-item--prev {% unless paginate.previous %}disabled{% endunless %}">
       <a {% if paginate.previous %}href="{{ paginate.previous.url }}"{% endif %}>
-        {{- 'icon-chevron-left.svg' | inline_asset_content -}}
+        {% render 'svg-icon', name: 'icon-chevron-left.svg' %}
       </a>
     </li>
 
@@ -32,7 +32,7 @@
 
     <li class="pagination-item pagination-item--next {% unless paginate.next %}disabled{% endunless %}">
       <a {% if paginate.next %}href="{{ paginate.next.url }}"{% endif %}>
-        {{- 'icon-chevron-right.svg' | inline_asset_content -}}
+        {% render 'svg-icon', name: 'icon-chevron-right.svg' %}
       </a>
     </li>
 
