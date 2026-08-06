@@ -1,37 +1,47 @@
 {%- if paginate.pages > 1 -%}
-    <ul class="pagination" role="list">
-      {%- if paginate.previous -%}
-        <li class="pagination-item pagination-item--prev">
-          <a  href="{{ paginate.previous.url }}">
-            {{- 'icon-chevron-left.svg' | inline_asset_content -}}
+  <ul class="pagination" role="list">
+      {% comment %}{%- if paginate.previous -%}{% endcomment %}
+        {% comment %}<li class="pagination-item pagination-item--prev">{% endcomment %}
+          {% comment %}<a  href="{{ paginate.previous.url }}">{% endcomment %}
+            {% comment %}{{- 'icon-chevron-left.svg' | inline_asset_content -}}{% endcomment %}
+          {% comment %}</a>{% endcomment %}
+        {% comment %}</li>{% endcomment %}
+      {% comment %}{%- endif -%}{% endcomment %}
+
+    <li class="pagination-item pagination-item--prev {% unless paginate.previous %}disabled{% endunless %}">
+      <a {% if paginate.previous %}href="{{ paginate.previous.url }}"{% endif %}>
+        {{- 'icon-chevron-left.svg' | inline_asset_content -}}
+      </a>
+    </li>
+
+    {%- for part in paginate.parts -%}
+      <li class="pagination-item {% if part.title == paginate.current_page %}pagination-item-active{% endif %}">
+        {% if part.is_link %}
+          <a href="{{ part.url }}">
+            {{ part.title }}
           </a>
-        </li>
-      {%- endif -%}
-
-
-
-      {%- for part in paginate.parts -%}
-        <li class="pagination-item {% if part.title == paginate.current_page %}pagination-item-active{% endif %}">
-          {% if part.is_link %}
-            <a href="{{ part.url }}">
-              {{ part.title }}
-            </a>
+        {% else %}
+          {% if part.title == paginate.current_page %}
+            <a role="link" aria-disabled="true">{{ part.title }}</a>
           {% else %}
-            {% if part.title == paginate.current_page %}
-              <a role="link" aria-disabled="true">{{ part.title }}</a>
-            {% else %}
-              <span>{{ part.title }}</span>
-            {% endif %}
+            <span>{{ part.title }}</span>
           {% endif %}
-        </li>
-  {%- endfor -%}
+        {% endif %}
+      </li>
+    {%- endfor -%}
 
-  {%- if paginate.next -%}
-  <li class="pagination-item pagination-item--next">
-    <a href="{{ paginate.next.url }}">
-      {{- 'icon-chevron-right.svg' | inline_asset_content -}}
-    </a>
-  </li>
-  {%- endif -%}
+    <li class="pagination-item pagination-item--next {% unless paginate.next %}disabled{% endunless %}">
+      <a {% if paginate.next %}href="{{ paginate.next.url }}"{% endif %}>
+        {{- 'icon-chevron-right.svg' | inline_asset_content -}}
+      </a>
+    </li>
+
+  {% comment %}{%- if paginate.next -%}{% endcomment %}
+    {% comment %}<li class="pagination-item pagination-item--next">{% endcomment %}
+      {% comment %}<a href="{{ paginate.next.url }}">{% endcomment %}
+        {% comment %}{{- 'icon-chevron-right.svg' | inline_asset_content -}}{% endcomment %}
+      {% comment %}</a>{% endcomment %}
+    {% comment %}</li>{% endcomment %}
+  {% comment %}{%- endif -%}{% endcomment %}
   </ul>
 {%- endif -%}
