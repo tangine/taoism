@@ -6,6 +6,14 @@
   position: relative;
 }
 
+.svg-icon {
+  display: inline-block;
+}
+.svg-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
 .pagination {
   display: flex;
   flex-direction: row;
