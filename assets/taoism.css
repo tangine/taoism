@@ -104,6 +104,7 @@ button {
   align-items: center;
   cursor: pointer;
   padding: 0.75em;
+  border: none;
   background: transparent;
 }
 .quantity-editor .quantity-editor__button:active {
