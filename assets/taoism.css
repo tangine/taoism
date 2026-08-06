@@ -15,6 +15,22 @@
   height: 1em;
 }
 
+button {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  gap: 0.375em;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  transition: 0.1s;
+}
+
 .pagination {
   display: flex;
   flex-direction: row;
