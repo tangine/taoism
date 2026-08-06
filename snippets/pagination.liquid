@@ -1,5 +1,13 @@
 {%- if paginate.pages > 1 -%}
   <ul class="pagination" role="list">
+      {% comment %}{%- if paginate.previous -%}{% endcomment %}
+        {% comment %}<li class="pagination-item pagination-item--prev">{% endcomment %}
+          {% comment %}<a  href="{{ paginate.previous.url }}">{% endcomment %}
+            {% comment %}{{- 'icon-chevron-left.svg' | inline_asset_content -}}{% endcomment %}
+          {% comment %}</a>{% endcomment %}
+        {% comment %}</li>{% endcomment %}
+      {% comment %}{%- endif -%}{% endcomment %}
+
     <li class="pagination-item pagination-item--prev {% unless paginate.previous %}disabled{% endunless %}">
       <a {% if paginate.previous %}href="{{ paginate.previous.url }}"{% endif %}>
         {% render 'svg-icon', icon: 'icon-chevron-left.svg' %}
@@ -27,5 +35,13 @@
         {% render 'svg-icon', icon: 'icon-chevron-right.svg' %}
       </a>
     </li>
+
+  {% comment %}{%- if paginate.next -%}{% endcomment %}
+    {% comment %}<li class="pagination-item pagination-item--next">{% endcomment %}
+      {% comment %}<a href="{{ paginate.next.url }}">{% endcomment %}
+        {% comment %}{{- 'icon-chevron-right.svg' | inline_asset_content -}}{% endcomment %}
+      {% comment %}</a>{% endcomment %}
+    {% comment %}</li>{% endcomment %}
+  {% comment %}{%- endif -%}{% endcomment %}
   </ul>
 {%- endif -%}
