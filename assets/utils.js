@@ -81,5 +81,7 @@ export function throttle(fn, delay = 200) {
   return /** @type {T & { cancel(): void }} */ (throttled);
 }
 
+export function arrayToTree(list) {}
 
+export function treeToArray(tree) {}
 

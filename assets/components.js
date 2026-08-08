@@ -17,9 +17,9 @@ class VariantPicker extends HTMLElement{
     event.preventDefault();
     event.stopPropagation();
     const selectedOptions = this.querySelectorAll("fieldset input:checked");
-    const options = []
-    selectedOptions.forEach(option => {
-      options.push(option.dataset);
+
+    const options = selectedOptions.map(option => {
+      return option.dataset;
     })
     this.#dispatch(options)
   }
@@ -91,9 +91,8 @@ class ProductInfo extends HTMLElement {
     this.#abortController = new AbortController();
     const {signal} = this.#abortController;
 
-    fetch(url.toString(), {
-      signal
-    }).then(response => response.text())
+    fetch(url.toString(), {signal})
+      .then(response => response.text())
       .then(text => {
         const html = new DOMParser().parseFromString(text, 'text/html');
         const section = html.getElementById(sectionId);
