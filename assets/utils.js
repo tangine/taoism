@@ -81,6 +81,22 @@ export function throttle(fn, delay = 200) {
   return /** @type {T & { cancel(): void }} */ (throttled);
 }
 
+/**
+ * Helper to parse integer with a default fallback
+ * Handles the case where 0 is a valid value (not falsy)
+ * @template {number|null} T
+ * @param {string|number|null|undefined} value - The value to parse
+ * @param {T} defaultValue - The default value (number or null)
+ * @returns {number|T} The parsed integer or default value
+ */
+export function parseIntOrDefault(value, defaultValue) {
+  if (value === null || value === undefined || value === '') {
+    return defaultValue;
+  }
+  const parsed = parseInt(value.toString());
+  return isNaN(parsed) ? defaultValue : parsed;
+}
+
 export function arrayToTree(list) {}
 
 export function treeToArray(tree) {}

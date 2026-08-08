@@ -1,3 +1,5 @@
+import {parseIntOrDefault} from "./utils";
+
 class VariantPicker extends HTMLElement{
   #abortController = undefined;
   constructor() {
@@ -148,7 +150,7 @@ class ProductForm extends HTMLElement {
     // formData.append("quantity", String(1));
     console.log(formData);
 
-    fetch(window.routes.cart_add_url + ".js", {
+    fetch(window.routes.cart_add_url, {
       method: "POST",
       body: formData
     }).then(response => response.json())
@@ -210,7 +212,7 @@ class QuantityEditor extends HTMLElement {
     this.quantityInput = this.querySelector("input[type='number']");
     this.minusButton = this.querySelector("button[name='minus']");
     this.plusButton = this.querySelector("button[name='plus']");
-    this.plusButton = this.querySelector("button[name='remove']");
+    this.removeButton = this.querySelector("button[name='remove']");
 
     this.quantityInput.addEventListener("change", this.#onInputChange.bind(this))
     this.querySelectorAll("button").forEach(button => {
@@ -218,6 +220,7 @@ class QuantityEditor extends HTMLElement {
     })
 
     this.#validateQuantity()
+    this.#updateButtonStates()
   }
 
   #onButtonClick(event) {
@@ -263,13 +266,28 @@ class QuantityEditor extends HTMLElement {
     }
   }
 
-  #updateQuantity() {
+  #getCurrentValues() {
+    return {
+      min: parseIntOrDefault(this.quantityInput.min, 1),
+      max: parseIntOrDefault(this.quantityInput.max, null),
+      step: parseIntOrDefault(this.quantityInput.step, 1),
+      value: parseIntOrDefault(this.quantityInput.value, 0),
+    }
+  }
+
+  #updateButtonStates() {
+    const {min, max, step, value} = this.#getCurrentValues();
+    this.minusButton.disabled = value <= min;
+    this.plusButton.disabled = max !== null && value >= max
+  }
+
+  #updateQuantity(quantity) {
     this.dispatchEvent(new CustomEvent('quantity:change', {
       bubbles: true,
       cancelable: true,
       composed: true,
       detail: {
-        quantity: this.quantityInput.value
+        quantity
       }
     }));
   }
