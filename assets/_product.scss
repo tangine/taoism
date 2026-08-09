@@ -1,6 +1,7 @@
 .product-variant-picker {
   fieldset {
     border: none;
+    gap: 0.375em;
 
     + fieldset {
       margin-top: 1rem;
@@ -23,6 +24,7 @@
     color: black;
     background: white;
     border: 1px solid black;
+    border-radius: 4px;
 
     &:has(input:checked) {
       color: white;
