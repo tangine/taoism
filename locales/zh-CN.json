@@ -15,6 +15,7 @@
     "continue_shopping": "继续购物"
   },
   "content": {
+    "sold_out": "售罄",
     "page_not_found": "页面未找到"
   }
 }

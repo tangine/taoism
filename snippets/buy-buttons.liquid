@@ -11,7 +11,13 @@
       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
       <div>
         {% render 'quantity-editor' %}
-        <button type="button" name="add-to-cart">{{ 'actions.add_to_cart' | t }}</button>
+        <button type="button" name="add-to-cart">
+          {% if product.selected_or_first_available_variant.available %}
+            {{ 'actions.add_to_cart' | t }}
+            {% else %}
+            {{ 'content.sold_out' | t }}
+          {% endif %}
+        </button>
       </div>
     {%- endform -%}
   </product-form>

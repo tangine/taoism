@@ -15,6 +15,7 @@
     "continue_shopping": "Continue shopping"
   },
   "content": {
-    "page_not_found": "Page Not Found"
+    "sold_out": "Sold out",
+    "page_not_found": "Page Not Found",
   }
 }
