@@ -1,4 +1,4 @@
-import {parseIntOrDefault} from "./utils";
+import {parseIntOrDefault} from "@theme/utils";
 
 class VariantPicker extends HTMLElement{
   #abortController = undefined;
