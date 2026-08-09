@@ -1,4 +1,10 @@
 .product-variant-picker {
+  fieldset {
+    + fieldset {
+      margin-top: 1rem;
+    }
+  }
+
   .variant-option {
     display: inline-flex;
     justify-content: center;
