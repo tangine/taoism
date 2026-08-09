@@ -57,17 +57,17 @@
               {%- if variant.options[forloop.index0] != current_option -%}
                 {% break %}
               {%- elsif forloop.last -%}
-                <label>
-                  <input type="radio"
-                         value="{{ option_value.name }}"
+                <label class="variant-option">
+                  <input type="radio" class="variant-option__input"
                          name="{{ product_option.name }}"
+                         value="{{ option_value.name }}"
                          data-available="{{ variant.available }}"
                          data-id="{{ option_value.id }}"
                          data-name="{{ product_option.name }}"
                          data-value="{{ option_value.name }}"
                          {% if option_value.selected %}checked{% endif %}
                   />
-                  <span>{{ option_value.name }}</span>
+                  <span class="variant-option__label">{{ option_value.name }}</span>
                 </label>
               {%- endif -%}
             {% endfor %}

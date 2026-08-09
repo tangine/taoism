@@ -234,6 +234,7 @@ class QuantityEditor extends HTMLElement {
       this.quantityInput.stepDown()
     } else if(name === 'remove') {
       console.log("remove")
+      this.#updateQuantity(0);
     }
 
     this.#validateQuantity()
@@ -296,8 +297,6 @@ if(!customElements.get("quantity-editor")){
   customElements.define("quantity-editor", QuantityEditor);
 }
 
-
-
 class SlideShow extends HTMLElement {
   constructor() {
     super();
@@ -313,6 +312,12 @@ class CartIcon extends HTMLElement {
   constructor() {
     super();
   }
+
+  connectedCallback() {
+
+  }
+
+  #updateCartBubbleNumber() {}
 }
 if(!customElements.get('cart-icon')) {
   customElements.define('cart-icon', CartIcon);
