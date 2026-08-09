@@ -11,6 +11,9 @@
     height: 2.5em;
     padding-inline: 1.5em;
     gap: 0.375em;
+    color: #333;
+    background: white;
+    border: 1px solid #333;
 
     &:has(input:checked) {
       color: white;
