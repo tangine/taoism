@@ -63,6 +63,7 @@ class ProductInfo extends HTMLElement {
   }
 
   connectedCallback() {
+    console.log("connectedCallback");
     this.addEventListener("variant:change", this.#onVariantChange.bind(this));
   }
 
