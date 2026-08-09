@@ -8,8 +8,9 @@
     white-space: nowrap;
     user-select: none;
     transition: 0.1s;
-    height: 40px;
+    height: 2.5em;
     padding-inline: 1.5em;
+    gap: 0.375em;
 
     &:has(input:checked) {
       color: white;
