@@ -203,7 +203,7 @@ button.disabled *, button:disabled * {
   background: #333;
 }
 .product-variant-picker .variant-option:has(input:disabled), .product-variant-picker .variant-option:has(input[data-available=false]) {
-  opacity: 0.6;
+  opacity: 0.7;
   text-decoration: line-through;
 }
 .product-variant-picker .variant-option input {
