@@ -20,8 +20,9 @@ class VariantPicker extends HTMLElement{
     event.stopPropagation();
     const selectedOptions = this.querySelectorAll("fieldset input:checked");
 
-    const options = selectedOptions.map(option => {
-      return option.dataset;
+    const options = []
+    selectedOptions.forEach(option => {
+      return options.push({...option.dataset});
     })
     this.#dispatch(options)
   }
