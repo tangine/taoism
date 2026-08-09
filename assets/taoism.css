@@ -196,7 +196,7 @@ button.disabled *, button:disabled * {
   user-select: none;
   transition: 0.1s;
   height: 40px;
-  padding-inline: 0.5em;
+  padding-inline: 1.5em;
 }
 .product-variant-picker .variant-option:has(input:checked) {
   color: white;
