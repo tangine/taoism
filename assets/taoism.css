@@ -188,6 +188,7 @@ button.disabled *, button:disabled * {
 }
 .product-variant-picker fieldset {
   border: none;
+  gap: 0.375em;
 }
 .product-variant-picker fieldset + fieldset {
   margin-top: 1rem;
@@ -208,6 +209,7 @@ button.disabled *, button:disabled * {
   color: black;
   background: white;
   border: 1px solid black;
+  border-radius: 4px;
 }
 .product-variant-picker .variant-option:has(input:checked) {
   color: white;
