@@ -30,7 +30,7 @@
 
     {% for product_option in product.options_with_values %}
       {% liquid assign option_index = forloop.index0 %}
-      <fieldset>
+      <fieldset class="variant-options">
         <legend>{{ product_option.name }}</legend>
         {% for option_value in product_option.values %}
           {% liquid
