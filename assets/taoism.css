@@ -187,6 +187,7 @@ button.disabled *, button:disabled * {
   }
 }
 .product-variant-picker fieldset {
+  display: flex;
   border: none;
   gap: 0.375em;
 }
