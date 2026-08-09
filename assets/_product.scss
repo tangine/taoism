@@ -1,5 +1,7 @@
 .product-variant-picker {
   fieldset {
+    border: none;
+
     + fieldset {
       margin-top: 1rem;
     }

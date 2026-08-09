@@ -186,6 +186,9 @@ button.disabled *, button:disabled * {
     transform: rotate(360deg);
   }
 }
+.product-variant-picker fieldset {
+  border: none;
+}
 .product-variant-picker fieldset + fieldset {
   margin-top: 1rem;
 }
