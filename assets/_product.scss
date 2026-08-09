@@ -9,6 +9,16 @@
     user-select: none;
     transition: 0.1s;
 
+    :has(input:checked) {
+      color: white;
+      background: #333;
+    }
+
+    :has(input:disabled) {
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+
     input {
       display: none;
     }

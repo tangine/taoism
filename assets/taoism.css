@@ -196,6 +196,14 @@ button.disabled *, button:disabled * {
   user-select: none;
   transition: 0.1s;
 }
+.product-variant-picker .variant-option :has(input:checked) {
+  color: white;
+  background: #333;
+}
+.product-variant-picker .variant-option :has(input:disabled) {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
 .product-variant-picker .variant-option input {
   display: none;
 }
