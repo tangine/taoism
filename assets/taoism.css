@@ -196,6 +196,9 @@ button.disabled *, button:disabled * {
   user-select: none;
   transition: 0.1s;
 }
+.product-variant-picker .variant-option input {
+  display: none;
+}
 
 :root {
   --icon-stroke-width: 1.5;
