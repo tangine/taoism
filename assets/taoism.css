@@ -200,7 +200,8 @@ button.disabled *, button:disabled * {
   color: white;
   background: #333;
 }
-.product-variant-picker .variant-option :has(input:disabled) {
+.product-variant-picker .variant-option :has(input:disabled),
+.product-variant-picker .variant-option :has(input[data-available=false]) {
   opacity: 0.6;
   text-decoration: line-through;
 }

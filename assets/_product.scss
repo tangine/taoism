@@ -14,7 +14,8 @@
       background: #333;
     }
 
-    :has(input:disabled) {
+    :has(input:disabled),
+    :has(input[data-available="false"]) {
       opacity: 0.6;
       text-decoration: line-through;
     }
