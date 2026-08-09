@@ -57,7 +57,7 @@
               {%- if variant.options[forloop.index0] != current_option -%}
                 {% break %}
               {%- elsif forloop.last -%}
-                <label class="variant-option">
+                <label class="variant-option {% if option_value.selected %}active{% endif %}">
                   <input type="radio" class="variant-option__input"
                          name="{{ product_option.name }}"
                          value="{{ option_value.name }}"
