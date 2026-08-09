@@ -332,6 +332,12 @@ button.disabled *, button:disabled * {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
 }
+.quantity-editor .quantity-editor__input::-webkit-outer-spin-button, .quantity-editor .quantity-editor__input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
 
 cart-info table {
   width: 100%;
