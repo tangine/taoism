@@ -182,13 +182,21 @@ button.disabled *, button:disabled * {
 }
 
 @keyframes loading-spinner {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
+.product-variant-picker .variant-option {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: 0.1s;
+}
+
 :root {
   --icon-stroke-width: 1.5;
   --icon-size: 1.5;
@@ -297,37 +305,6 @@ button.disabled *, button:disabled * {
   appearance: textfield;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
-}
-
-.product-variant-picker fieldset label {
-  display: inline-block;
-  color: #333333;
-  background: white;
-  position: relative;
-  padding: 0.25rem 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid #333;
-  cursor: pointer;
-}
-.product-variant-picker fieldset label input {
-  display: none;
-}
-.product-variant-picker fieldset label span {
-  display: inline-block;
-}
-.product-variant-picker fieldset label:has(input[data-available=false]) {
-  cursor: not-allowed;
-}
-.product-variant-picker fieldset label:has(input[data-available=false]) span {
-  color: #cccccc;
-  text-decoration: line-through;
-}
-.product-variant-picker fieldset label:has(input:checked[data-available=false]) span {
-  color: #aaa !important;
-}
-.product-variant-picker fieldset label:has(input:checked) {
-  color: white;
-  background: black;
 }
 
 cart-info table {

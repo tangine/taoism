@@ -3,6 +3,7 @@
 @use "position";
 @use "text";
 @use "animation";
+@use "product";
 
 :root {
   --icon-stroke-width: 1.5;
@@ -127,50 +128,6 @@
     appearance: textfield;
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
-  }
-}
-
-.product-variant-picker {
-  fieldset {
-    label {
-      display: inline-block;
-      color: #333333;
-      background: white;
-      position: relative;
-      padding: 0.25rem 1.5rem;
-      border-radius: 1rem;
-      border: 1px solid #333;
-      cursor: pointer;
-
-      input {
-        display: none;
-      }
-
-      span {
-        display: inline-block;
-      }
-
-      &:has(input[data-available="false"]) {
-        cursor: not-allowed;
-
-        span {
-          color: #cccccc;
-          text-decoration: line-through;
-        }
-      }
-
-      &:has(input:checked[data-available="false"]) {
-        span {
-          color: #aaa !important;
-        }
-      }
-
-      &:has(input:checked) {
-        color: white;
-        background: black;
-
-      }
-    }
   }
 }
 

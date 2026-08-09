@@ -1,0 +1,12 @@
+.product-variant-picker {
+  .variant-option {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition: 0.1s;
+  }
+}
