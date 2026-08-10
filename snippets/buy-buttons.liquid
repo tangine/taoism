@@ -11,7 +11,7 @@
       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
       <div class="flex-row">
         {% render 'quantity-editor' %}
-        <button type="button" name="add-to-cart" style="width: 100%;">
+        <button type="button" name="add-to-cart" style="width: 100%;" {% unless product.selected_or_first_available_variant.available %} disabled {% endunless %}>
           {% if product.selected_or_first_available_variant.available %}
             {{ 'actions.add_to_cart' | t }}
             {% else %}
