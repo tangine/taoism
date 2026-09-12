@@ -8,6 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "collection_list": {
+      "type": "main-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection_list"
+  ]
 }
