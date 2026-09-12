@@ -8,6 +8,14 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "header": {
+      "type": "header",
+      "name": "header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "header"
+  ]
 }
