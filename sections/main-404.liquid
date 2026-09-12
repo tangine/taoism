@@ -1,29 +1,55 @@
 {% style %}
-  .section-404 {
-    flex: auto;
-  display:flex;
-  flex-direction:column;
-  justify-content: center
-  align-items: center;
-  }
+  #{{  }}
 {% endstyle %}
 
-<div style="display: flex;flex-direction: column;justify-content: center; align-items: center;flex: auto;">
-  <h1>{{- 'content.page_not_found' | t | escape -}}</h1>
-  <div>
-    <a href="/collections/all">{{- 'actions.continue_shopping' | t | escape -}}</a>
+<div id="{{ section.id }}" class="section">
+  <div class="section-inner {% if container_type != 'custom' %} {{ container_type }} {% endif %}" >
+
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.404",
-  "class": "section-404",
-  "settings": [],
+  "name": "t:names.404",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_type",
+      "label": "t:settings.section_width",
+      "options": [
+        {
+          "value": "x-full",
+          "label": "t:options.global_width"
+        },
+        {
+          "value": "global-width",
+          "label": "t:options.full_width"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_width",
+      "label": "t:options.custom_width",
+      "default": 1200,
+      "min": 400,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "info": ""
+    }
+  ],
   "blocks": [],
   "presets": [
     {
-      "name": "t:sections.404"
+      "name": "t:names.404"
     }
   ]
 }

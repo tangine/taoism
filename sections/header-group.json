@@ -1,27 +1,8 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "header",
-  "name": "t:sections.header",
-  "sections": {
-    "header_hKG74A": {
-      "type": "header",
-      "name": "t:sections.header",
-      "settings": {
-        "container": "default",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    }
-  },
-  "order": [
-    "header_hKG74A"
-  ]
+  "name": "t:names.header_group",
+  "sections": [
+
+  ],
+  "order": []
 }
