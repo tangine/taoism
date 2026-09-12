@@ -1,0 +1,56 @@
+{% style %}
+
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section">
+  <div class="section-inner {% if container_type != 'custom' %} {{ container_type }} {% endif %}" >
+    404
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:names.404",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_type",
+      "label": "t:settings.section_width",
+      "options": [
+        {
+          "value": "x-full",
+          "label": "t:options.global_width"
+        },
+        {
+          "value": "global-width",
+          "label": "t:options.full_width"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_width",
+      "label": "t:options.custom_width",
+      "default": 1200,
+      "min": 400,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "info": "Tips"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:names.404"
+    }
+  ]
+}
+{% endschema %}
