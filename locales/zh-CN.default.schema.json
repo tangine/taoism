@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "collection_list": "产品系列",
     "footer": "Footer",
     "header": "Header",
     "product_card": "产品卡"
