@@ -7,7 +7,8 @@
     "footer_group": "Footer group"
   },
   "settings": {
-    "section_width": "Section width"
+    "section_width": "Section width",
+    "menu": "Menu"
   },
   "options": {
     "custom": "Custom",

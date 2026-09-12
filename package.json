@@ -1,0 +1,7 @@
+{
+  "name": "taoism",
+  "private": true,
+  "dependencies": {
+    "sass-embedded": "^1.104.0"
+  }
+}

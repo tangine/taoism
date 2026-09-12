@@ -1,2 +1,6 @@
 .idea/
 *.css.map
+
+node_modules/
+
+pnpm-lock.yaml

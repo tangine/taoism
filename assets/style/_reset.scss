@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* 统一盒子模型为border-box，并清楚所有内外边距 */
 *,
 *::before,
@@ -6,6 +5,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+
 }
 
 /* HTML5 语义化标签在旧版浏览器中显示为块级 */
@@ -40,16 +43,19 @@ body {
 }
 
 /* 列表样式重置 */
-ol, ul {
+ol,ul {
   list-style: none;
 }
 
+
 /* 引用和引用标记 */
-blockquote, q {
+blockquote,q {
   quotes: none;
-}
-blockquote::before, blockquote::after, q::before, q::after {
-  content: none;
+
+  &::before,
+  &::after {
+    content: none;
+  }
 }
 
 /* 表格边框合并 */
@@ -84,10 +90,10 @@ textarea {
 
 /* 按钮和可点击元素鼠标样式 */
 button,
-[type=button],
-[type=reset],
-[type=submit],
-[role=button] {
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"]{
   cursor: pointer;
   border: none;
   background: transparent;
@@ -108,19 +114,21 @@ textarea {
 }
 
 /* 移除 input number 的上下箭头 */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
-}
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 /* 移除搜索框的清除按钮 */
-input[type=search]::-webkit-search-decoration,
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-results-button,
-input[type=search]::-webkit-search-results-decoration {
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
@@ -150,25 +158,3 @@ iframe {
   display: table;
   clear: both;
 }
-
-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.375em;
-  line-height: 1;
-  cursor: pointer;
-  white-space: nowrap;
-  user-select: none;
-  text-align: center;
-  vertical-align: middle;
-  transition: 0.1s;
-}
-button:hover {
-  opacity: 0.85;
-}
-button.disabled *, button:disabled * {
-  pointer-events: none;
-}
-
-/*# sourceMappingURL=taoism.css.map */
