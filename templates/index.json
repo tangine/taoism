@@ -9,12 +9,19 @@
  */
 {
   "sections": {
-    "collection_list": {
+    "main_collection_EDgVRw": {
       "type": "main-collection",
+      "name": "t:names.collection_list",
+      "settings": {}
+    },
+    "main_collection_NQLXRn": {
+      "type": "main-collection",
+      "name": "t:names.collection_list",
       "settings": {}
     }
   },
   "order": [
-    "collection_list"
+    "main_collection_EDgVRw",
+    "main_collection_NQLXRn"
   ]
 }
