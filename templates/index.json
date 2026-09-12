@@ -1,4 +1,12 @@
 {
-  "sections": [],
+  "sections": {
+    "404": {
+      "type": "main-404",
+      "name": "404",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    }
+  },
   "order": []
 }
