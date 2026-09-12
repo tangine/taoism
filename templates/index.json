@@ -9,13 +9,13 @@
  */
 {
   "sections": {
-    "header": {
+    "header_t3e89R": {
       "type": "header",
-      "name": "header",
+      "name": "t:names.header",
       "settings": {}
     }
   },
   "order": [
-    "header"
+    "header_t3e89R"
   ]
 }
