@@ -1,8 +1,7 @@
 {
   "type": "footer",
   "name": "t:names.footer_group",
-  "sections": [
-
-  ],
+  "sections": {
+  },
   "order": []
 }

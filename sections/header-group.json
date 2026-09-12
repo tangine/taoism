@@ -1,8 +1,8 @@
 {
   "type": "header",
   "name": "t:names.header_group",
-  "sections": [
+  "sections": {
 
-  ],
+  },
   "order": []
 }
