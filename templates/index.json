@@ -17,6 +17,22 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "slide_p3YE7C": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/theme_cover_image.jpg"
+          },
+          "blocks": {}
+        },
+        "slide_XDjPct": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/setting-up-tent.jpg"
+          },
+          "blocks": {}
+        },
         "slide_YQkQBX": {
           "type": "_slide",
           "name": "t:names.slide",
@@ -27,6 +43,8 @@
         }
       },
       "block_order": [
+        "slide_p3YE7C",
+        "slide_XDjPct",
         "slide_YQkQBX"
       ],
       "name": "t:names.slideshow",
