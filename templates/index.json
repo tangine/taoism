@@ -51,10 +51,49 @@
       "settings": {
         "aspect_ratio": "2.5"
       }
+    },
+    "slideshow_Nk6YnW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_VGNBML": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landscape-of-green-rolling-hills-and-mountain-peaks.jpg"
+          },
+          "blocks": {}
+        },
+        "slide_8apaJH": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/setting-up-tent.jpg"
+          },
+          "blocks": {}
+        },
+        "slide_XPcahT": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/theme_cover_image.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "slide_VGNBML",
+        "slide_8apaJH",
+        "slide_XPcahT"
+      ],
+      "name": "t:names.slideshow",
+      "settings": {
+        "aspect_ratio": "16 / 9"
+      }
     }
   },
   "order": [
     "main_collection_EDgVRw",
-    "slideshow"
+    "slideshow",
+    "slideshow_Nk6YnW"
   ]
 }
