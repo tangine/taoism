@@ -6,4 +6,8 @@
   box-sizing: border-box;
 }
 
+ul, ol {
+  list-style: none;
+}
+
 /*# sourceMappingURL=base.css.map */
