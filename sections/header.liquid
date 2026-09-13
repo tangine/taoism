@@ -1,9 +1,11 @@
 <div>
-  <ul>
-    {% for link in section.settings.header_menu %}
+  {% if section.settings.header_menu %}
+    <ul>
+    {% for link in section.settings.header_menu.links %}
       <li></li>
     {% endfor %}
   </ul>
+  {% endif %}
 </div>
 {% schema %}
 {
