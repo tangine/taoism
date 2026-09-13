@@ -198,10 +198,32 @@ if (!customElements.get('slide-show')) {
 }
 
 class QuantityEditor extends HTMLElement {
+  static get observedAttributes() {
+    return ['quantity', 'max', 'min', 'step'];
+  }
+
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    
+  }
+
   constructor() {
     super();
+  }
+
+  connectedCallback() {
+
+  }
+
+  #bindEvents() {
+
   }
 }
 if (!customElements.get('quantity-editor')) {
   customElements.define('quantity-editor', QuantityEditor);
+}
+
+class CartItem extends HTMLElement {
+  constructor() {
+    super();
+  }
 }
