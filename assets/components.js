@@ -40,7 +40,7 @@ if (!customElements.get("variant-picker")) {
   customElements.define("variant-picker", VariantPicker);
 }
 
-class slide extends HTMLElement {
+class Slideshow extends HTMLElement {
   #timer;
   #currentIndex;
   #slides;
@@ -194,7 +194,7 @@ class slide extends HTMLElement {
 }
 
 if (!customElements.get('slide-show')) {
-  customElements.define('slide-show', slide);
+  customElements.define('slide-show', Slideshow);
 }
 
 class QuantityEditor extends HTMLElement {
