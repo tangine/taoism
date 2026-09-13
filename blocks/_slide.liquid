@@ -1,10 +1,11 @@
-<div class="slide slide-item">
+<div class="slide slide-item" {{ block.shopify_attributes }}>
   <img src="{{ block.settings.background_image | image_url }}" alt="">
 </div>
 
 {% schema %}
 {
   "name": "t:names.slide",
+  "tag": null,
   "settings": [
     {
       "type": "image_picker",
