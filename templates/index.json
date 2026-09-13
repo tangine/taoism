@@ -16,6 +16,19 @@
     },
     "slideshow": {
       "type": "slideshow",
+      "blocks": {
+        "slide_YQkQBX": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landscape-of-green-rolling-hills-and-mountain-peaks.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "slide_YQkQBX"
+      ],
       "name": "t:names.slideshow",
       "settings": {}
     }
