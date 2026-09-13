@@ -40,114 +40,144 @@ if (!customElements.get("variant-picker")) {
   customElements.define("variant-picker", VariantPicker);
 }
 
-class SlideShow extends HTMLElement {
-  #slides;
-  #interval;
+class slide extends HTMLElement {
+  #timer;
   #currentIndex;
+  #slides;
   #autoplay;
   #loop;
-  #timer;
+  #interval;
+  #defaultInterval = 3000
+  #minInterval = 1000
+
   static get observedAttributes() {
-    return ['interval', 'autoplay', 'loop'];
+    return ['autoplay', 'interval', 'loop'];
   }
+
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    if(newVal === oldVal) return;
+
+    if (attrName === 'autoplay') {
+      this.#autoplay = newVal !== null && newVal !== 'false';
+    }
+
+    if (attrName === 'loop') {
+      this.#loop = newVal !== null && newVal !== 'false';
+    }
+
+    if (attrName === 'interval') {
+      this.#interval = Math.max(parseInt(newVal, 10) || this.#defaultInterval, this.#minInterval)
+    }
+
+    this.#resetAutoplayTimer()
+  }
+
   constructor() {
     super();
-
-    this.#currentIndex = 0
     this.#slides = []
-    this.#timer = null
+    this.#currentIndex = 0;
   }
 
   connectedCallback() {
-    this.#collectSlides()
-    this.#interval = this.getAttribute('interval') || 3000;
-    this.#renderSlideshow()
+    console.log("connected");
+    this.#slides = Array.from(this.querySelectorAll('.slide-item'));
+    this.#render()
     this.#bindEvents()
-
-    if(this.#autoplay) {
-      this.#startPlay()
-    }
+    this.#startAutoplay()
   }
 
   disconnectedCallback() {
-    this.#stopPlay()
-    this.#timer = null
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue) {
-      return;
-    }
-
-    switch (name) {
-      case 'interval':
-        this.#interval = parseInt(newValue, 10) || 3000 ;
-        break
-      case 'autoplay':
-        this.#autoplay = newValue !== null && newValue !== 'false';
-        break
-      case 'loop':
-        this.#loop = newValue !== null && newValue !== 'false';
-        break
-    }
+    this.#stopAutoplay()
   }
 
   #bindEvents() {
-    const pagination = this.querySelector('.slideshow-pagination');
-    pagination.addEventListener('click', this.#onDotClick.bind(this));
-  }
+    const prevBtn = this.querySelector('.slide-prev');
+    if (prevBtn) {
+      prevBtn.addEventListener("click", this.#onPrevSlide.bind(this));
+    }
 
-  #collectSlides() {
-    this.#slides = Array.from(this.querySelectorAll('.slide-item'));
-  }
+    const nextBtn = this.querySelector('.slide-next');
+    if (nextBtn) {
+      nextBtn.addEventListener("click", this.#onNextSlide.bind(this));
+    }
 
-  #renderSlideshow() {
-    const pagination = this.querySelector('.slideshow-pagination');
+    const pagination = this.querySelector('.slide-pagination');
     if (pagination) {
-      this.#slides.forEach((_, index) => {
-        const dot = document.createElement('i');
-        dot.classList.add('slideshow-pagination__item');
-        dot.classList.toggle('active', index === this.#currentIndex);
-        dot.setAttribute("data-index", index);
-        pagination.appendChild(dot);
-      })
+      pagination.addEventListener("click", this.#onDotClick.bind(this));
     }
   }
 
-  #onPrevClick(e) {
-    e.preventDefault();
+  #collectSlide() {
+
   }
 
-  #onNextClick(e) {
-    e.preventDefault();
+  #render() {
+    const pagination = this.querySelector('.slide-pagination');
+    this.#slides.forEach((_, index) => {
+      const dot = document.createElement("i");
+      dot.classList.add("slide-pagination__item")
+      dot.classList.toggle('active', index === this.#currentIndex);
+      dot.setAttribute("data-index", index);
+      pagination.appendChild(dot);
+    })
   }
 
-  #onDotClick(e) {
-    e.preventDefault();
-    const dataset = e.target.dataset
-    if(dataset.hasOwnProperty("index")) {
-      this.#jumpToSlide(dataset.index);
+  #updateSlidePosition() {
+    const slideWrapper = this.querySelector('.slide-wrapper');
+    const offset = -100 * this.#currentIndex;
+    slideWrapper.style.transform = `translateX(${offset}%)`;
+
+    const paginationItems = this.querySelectorAll('.slide-pagination__item');
+    paginationItems.forEach((item) => {
+      const index = parseInt(item.dataset?.index, 10);
+      if (!isNaN(index)) {
+        item.classList.toggle('active', index === this.#currentIndex);
+      }
+    })
+  }
+
+  #startAutoplay() {
+    if(!this.#timer) {
+      this.#timer = setInterval(() => {
+        this.#nextSlide()
+      }, this.#interval)
+    }
+  }
+
+  #stopAutoplay() {
+    if(this.#timer) {
+      clearInterval(this.#timer);
+      this.#timer = null;
     }
   }
 
   #jumpToSlide(index) {
-    const count = this.#slides.length;
-    if (count === 0) {
-      return;
-    }
-
-    if (index < 0) {
-      index = this.#loop ? count - 1 : 0;
-    } else if (index >= count) {
-      index = 0;
-    }
-
-    if(index === this.#currentIndex) {
-      return;
-    }
-
+    const slideCount = this.#slides.length
     this.#currentIndex = index;
-    this.#updateTrackPosition()
+    if (slideCount <= 1) return;
+
+
+    this.#currentIndex = index % slideCount;
+
+    this.#updateSlidePosition()
+  }
+
+  #onDotClick(e) {
+    const index = parseInt(e?.target?.dataset?.index, 10)
+    if (!isNaN(index)) {
+      this.#jumpToSlide(index);
+      this.#resetAutoplayTimer()
+    }
+  }
+
+  #onPrevSlide(e) {
+    e.preventDefault();
+    this.#prevSlide()
+  }
+
+  #onNextSlide(e) {
+    e.preventDefault();
+    this.#nextSlide()
   }
 
   #prevSlide() {
@@ -158,46 +188,14 @@ class SlideShow extends HTMLElement {
     this.#jumpToSlide(this.#currentIndex + 1);
   }
 
-  #startPlay() {
-    this.#stopPlay()
-
-    if(!this.#autoplay) return;
-    if(this.#slides.length <= 0) return;
-
-    this.#timer = setInterval(() => {
-      this.#nextSlide();
-    }, this.#interval)
-  }
-  #stopPlay() {
-    if(this.#timer) {
-      clearInterval(this.#timer);
-      this.#timer = null;
-    }
-  }
-
   #resetAutoplayTimer() {
-    if(this.#autoplay) return;
-
-    this.#stopPlay()
-    this.#startPlay();
-  }
-
-  #updateTrackPosition() {
-    const wrapper = this.querySelector(".slide-wrapper");
-    if(wrapper) {
-      const offset = -100 * this.#currentIndex;
-      wrapper.style.transform = `translateX(${offset}%)`;
-    }
-
-    const dots = this.querySelectorAll('.slideshow-pagination .slideshow-pagination__item');
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === this.#currentIndex);
-    })
+    this.#stopAutoplay()
+    this.#startAutoplay()
   }
 }
 
 if (!customElements.get('slide-show')) {
-  customElements.define('slide-show', SlideShow);
+  customElements.define('slide-show', slide);
 }
 
 class QuantityEditor extends HTMLElement {
