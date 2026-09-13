@@ -15,5 +15,8 @@
     "product_card": "产品卡",
     "slide": "幻灯片",
     "slideshow": "幻灯片"
+  },
+  "settings": {
+    "menu": "菜单"
   }
 }
