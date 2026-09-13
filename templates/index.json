@@ -48,7 +48,9 @@
         "slide_YQkQBX"
       ],
       "name": "t:names.slideshow",
-      "settings": {}
+      "settings": {
+        "aspect_ratio": "2.5"
+      }
     }
   },
   "order": [
