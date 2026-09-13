@@ -14,44 +14,6 @@
       "name": "t:names.collection_list",
       "settings": {}
     },
-    "slideshow": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_p3YE7C": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/theme_cover_image.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_XDjPct": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/setting-up-tent.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_YQkQBX": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landscape-of-green-rolling-hills-and-mountain-peaks.jpg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "slide_p3YE7C",
-        "slide_XDjPct",
-        "slide_YQkQBX"
-      ],
-      "name": "t:names.slideshow",
-      "settings": {
-        "aspect_ratio": "2.5"
-      }
-    },
     "slideshow_Nk6YnW": {
       "type": "slideshow",
       "blocks": {
@@ -87,13 +49,12 @@
       ],
       "name": "t:names.slideshow",
       "settings": {
-        "aspect_ratio": "16 / 9"
+        "aspect_ratio": "2.5"
       }
     }
   },
   "order": [
     "main_collection_EDgVRw",
-    "slideshow",
     "slideshow_Nk6YnW"
   ]
 }
