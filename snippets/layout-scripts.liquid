@@ -6,3 +6,4 @@
 </script>
 
 {{ 'components.js' | asset_url | preload_tag: as: 'script' }}
+<script src="{{ 'components.js' | asset_url }}" defer></script>
