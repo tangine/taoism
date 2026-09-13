@@ -1,8 +1,10 @@
 <div>
   {% if section.settings.header_menu %}
-    <ul>
+    <ul class="menu">
     {% for link in section.settings.header_menu.links %}
-      <li></li>
+      <li class="menu-item">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
     {% endfor %}
   </ul>
   {% endif %}
