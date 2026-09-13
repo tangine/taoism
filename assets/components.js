@@ -60,7 +60,9 @@ class SlideShow extends HTMLElement {
 
   connectedCallback() {
     this.#collectSlides()
-    console.log("slides", this.#slides)
+    this.#interval = this.getAttribute('interval') || 3000;
+    this.#renderSlideshow()
+    this.#bindEvents()
 
     if(this.#autoplay) {
       this.#startPlay()
@@ -90,8 +92,26 @@ class SlideShow extends HTMLElement {
     }
   }
 
+  #bindEvents() {
+    const pagination = this.querySelector('.slideshow-pagination');
+    pagination.addEventListener('click', this.#onDotClick.bind(this));
+  }
+
   #collectSlides() {
     this.#slides = Array.from(this.querySelectorAll('.slide-item'));
+  }
+
+  #renderSlideshow() {
+    const pagination = this.querySelector('.slideshow-pagination');
+    if (pagination) {
+      this.#slides.forEach((_, index) => {
+        const dot = document.createElement('i');
+        dot.classList.add('slideshow-pagination__item');
+        dot.classList.toggle('active', index === this.#currentIndex);
+        dot.setAttribute("data-index", index);
+        pagination.appendChild(dot);
+      })
+    }
   }
 
   #onPrevClick(e) {
@@ -104,9 +124,13 @@ class SlideShow extends HTMLElement {
 
   #onDotClick(e) {
     e.preventDefault();
+    const dataset = e.target.dataset
+    if(dataset.hasOwnProperty("index")) {
+      this.#jumpToSlide(dataset.index);
+    }
   }
 
-  #goToSlide(index) {
+  #jumpToSlide(index) {
     const count = this.#slides.length;
     if (count === 0) {
       return;
@@ -114,8 +138,8 @@ class SlideShow extends HTMLElement {
 
     if (index < 0) {
       index = this.#loop ? count - 1 : 0;
-    } else {
-      index = this.#loop ? 0 : count - 1;
+    } else if (index >= count) {
+      index = 0;
     }
 
     if(index === this.#currentIndex) {
@@ -123,14 +147,15 @@ class SlideShow extends HTMLElement {
     }
 
     this.#currentIndex = index;
+    this.#updateTrackPosition()
   }
 
   #prevSlide() {
-    this.#goToSlide(this.#currentIndex - 1);
+    this.#jumpToSlide(this.#currentIndex - 1);
   }
 
   #nextSlide() {
-    this.#goToSlide(this.#currentIndex + 1);
+    this.#jumpToSlide(this.#currentIndex + 1);
   }
 
   #startPlay() {
@@ -155,6 +180,19 @@ class SlideShow extends HTMLElement {
 
     this.#stopPlay()
     this.#startPlay();
+  }
+
+  #updateTrackPosition() {
+    const wrapper = this.querySelector(".slide-wrapper");
+    if(wrapper) {
+      const offset = -100 * this.#currentIndex;
+      wrapper.style.transform = `translateX(${offset}%)`;
+    }
+
+    const dots = this.querySelectorAll('.slideshow-pagination .slideshow-pagination__item');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === this.#currentIndex);
+    })
   }
 }
 
