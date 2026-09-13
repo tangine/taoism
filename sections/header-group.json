@@ -10,6 +10,16 @@
 {
   "type": "header",
   "name": "t:names.header",
-  "sections": {},
-  "order": []
+  "sections": {
+    "header_7rNr4r": {
+      "type": "header",
+      "name": "t:names.header",
+      "settings": {
+        "header_menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "header_7rNr4r"
+  ]
 }
