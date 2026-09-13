@@ -9,9 +9,9 @@
     {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   </title>
 
-  {% render 'meta-tags' %}
-  {% render 'stylesheets' %}
-  {% render 'scripts' %}
+  {% render 'layout-meta-tags' %}
+  {% render 'layout-stylesheets' %}
+  {% render 'layout-scripts' %}
 
   {{ content_for_header }}
 </head>
