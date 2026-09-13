@@ -1,0 +1,18 @@
+<div class="slide slide-item">
+  <img src="{{ block.settings.background_image }}" alt="">
+</div>
+
+{% schema %}
+{
+  "name": "t:names.slide",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [],
+  "presets": []
+}
+{% endschema %}

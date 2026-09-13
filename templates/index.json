@@ -14,14 +14,14 @@
       "name": "t:names.collection_list",
       "settings": {}
     },
-    "main_collection_NQLXRn": {
-      "type": "main-collection",
-      "name": "t:names.collection_list",
+    "slideshow": {
+      "type": "slideshow",
+      "name": "t:names.slideshow",
       "settings": {}
     }
   },
   "order": [
     "main_collection_EDgVRw",
-    "main_collection_NQLXRn"
+    "slideshow"
   ]
 }
