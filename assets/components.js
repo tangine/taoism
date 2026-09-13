@@ -79,9 +79,8 @@ class slide extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log("connected");
-    this.#slides = Array.from(this.querySelectorAll('.slide-item'));
-    this.#render()
+    this.#collectSlides()
+    this.#renderSlides()
     this.#bindEvents()
     this.#startAutoplay()
   }
@@ -107,11 +106,11 @@ class slide extends HTMLElement {
     }
   }
 
-  #collectSlide() {
-
+  #collectSlides() {
+    this.#slides = Array.from(this.querySelectorAll('.slide-item'));
   }
 
-  #render() {
+  #renderSlides() {
     const pagination = this.querySelector('.slide-pagination');
     this.#slides.forEach((_, index) => {
       const dot = document.createElement("i");
