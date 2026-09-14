@@ -1,13 +1,16 @@
 <div>产品系列</div>
 {% schema %}
 {
-    "name": "t:names.collection_list",
-    "settings": [],
-    "blocks": [],
-    "presets": [
-        {
-            "name": "t:names.collection_list"
-        }
-    ]
+  "name": "t:names.collection_list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:names.collection_list"
+    }
+  ]
 }
 {% endschema %}
