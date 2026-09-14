@@ -1,0 +1,9 @@
+{{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+
+<script type="importmap">
+  {
+    "imports": {}
+  }
+</script>
+
+<script src="{{ 'theme.js' | asset_url }}" type="module" defer></script>
