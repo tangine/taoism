@@ -2,7 +2,9 @@
   "name": "taoism",
   "private": true,
   "scripts": {
-    "dev": "gulp"
+    "dev": "shopify theme dev",
+    "watch": "gulp",
+    "build": "gulp build"
   },
   "devDependencies": {
     "gulp": "^5.0.1",
