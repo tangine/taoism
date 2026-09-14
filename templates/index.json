@@ -9,11 +9,6 @@
  */
 {
   "sections": {
-    "main_collection_EDgVRw": {
-      "type": "main-collection",
-      "name": "t:names.collection_list",
-      "settings": {}
-    },
     "slideshow_Nk6YnW": {
       "type": "slideshow",
       "blocks": {
@@ -72,7 +67,6 @@
     }
   },
   "order": [
-    "main_collection_EDgVRw",
     "slideshow_Nk6YnW"
   ]
 }
