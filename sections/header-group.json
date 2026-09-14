@@ -15,7 +15,7 @@
       "type": "header",
       "name": "t:names.header",
       "settings": {
-        "header_menu": ""
+        "header_menu": "main-menu"
       }
     }
   },
