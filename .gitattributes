@@ -1,0 +1,32 @@
+# 默认行为：自动检测文本文件，提交时统一转成 LF
+* text=auto
+
+# 明确指定文本文件的换行符（提交到仓库统一用 LF）
+*.js      text eol=lf
+*.css     text eol=lf
+*.scss    text eol=lf
+*.json    text eol=lf
+*.html    text eol=lf
+*.liquid  text eol=lf
+*.md      text eol=lf
+*.yml     text eol=lf
+
+# 二进制文件，Git 不要尝试转换
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.ico     binary
+*.woff    binary
+*.woff2   binary
+*.ttf     binary
+*.eot     binary
+*.svg     text eol=lf
+
+# 构建产物：标记为生成文件，合并时优先保留当前分支
+assets/*.js   linguist-generated=true
+assets/*.css  linguist-generated=true
+
+# 让 GitHub 不把这些算进语言统计
+assets/*      linguist-vendored=true
