@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+}
+
+@each $direction in(row, row-reverse, column, column-reverse) {
+  .flex-#{$direction} {
+    display: flex;
+    flex-direction: $direction;
+  }
+}

@@ -10,6 +10,9 @@
 {
   "names": {
     "404": "404",
+    "animations": "动画",
+    "announcement": "公告",
+    "announcement_bar": "公告栏",
     "collection_list": "产品系列",
     "footer": "脚部",
     "header": "头部",

@@ -1,0 +1,116 @@
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 重置页面基础 */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 表格边框合并 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 重置列表样式 */
+ul, ol {
+  list-style: none;
+}
+
+/* 表单字体继承，移出默认样式 */
+input, select, textarea, button {
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 按钮和可点击元素鼠标样式 */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* 禁用状态 */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* 移除 textarea 默认右下角拖拽 */
+textarea {
+  resize: vertical;
+}
+
+/* 移除 input number 的上下箭头 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 移除搜索框的清除按钮 */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* 重置链接样式 */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 移除 iframe 边框 */
+iframe {
+  border: 0;
+}
+
+/* 水平分割线 */
+hr {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  height: 0;
+  overflow: visible;
+}
+
+/* 清除浮动（可选工具类） */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 隐藏属性 */
+[hidden] {
+  display: none !important;
+}

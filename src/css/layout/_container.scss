@@ -1,0 +1,6 @@
+@each $size, $breakpoint in (sm: 576px) {
+  .container-#{$size} {
+    width: 100%;
+    max-width: $breakpoint;
+  }
+}

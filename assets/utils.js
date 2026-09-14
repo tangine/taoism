@@ -1,0 +1,1 @@
+function debounce(t,n){return"debounce"}function throttle(t,n){return"throttle"}function mod(t,n){return(t%n+n)%n}

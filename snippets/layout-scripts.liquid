@@ -5,5 +5,5 @@
   }
 </script>
 
-{{ 'components.js' | asset_url | preload_tag: as: 'script' }}
-<script src="{{ 'components.js' | asset_url }}" defer></script>
+{{ 'components' | asset_url | preload_tag: as: 'script' }}
+<script src="{{ 'components' | asset_url }}" defer></script>
