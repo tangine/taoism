@@ -9,64 +9,15 @@
  */
 {
   "sections": {
-    "slideshow_Nk6YnW": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_63j9cw": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/the-kayak-and-the-rock.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_nV9QEE": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/hands-slice-red-pepper-on-wooden-cutting-board.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_VGNBML": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landscape-of-green-rolling-hills-and-mountain-peaks.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_8apaJH": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/setting-up-tent.jpg"
-          },
-          "blocks": {}
-        },
-        "slide_XPcahT": {
-          "type": "_slide",
-          "name": "t:names.slide",
-          "settings": {
-            "background_image": "shopify://shop_images/theme_cover_image.jpg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "slide_63j9cw",
-        "slide_nV9QEE",
-        "slide_VGNBML",
-        "slide_8apaJH",
-        "slide_XPcahT"
-      ],
-      "name": "t:names.slideshow",
+    "main_404_Xtd3Ca": {
+      "type": "main-404",
+      "name": "t:names.404",
       "settings": {
-        "aspect_ratio": "2.5"
+        "aspect_ratio": "16 / 9"
       }
     }
   },
   "order": [
-    "slideshow_Nk6YnW"
+    "main_404_Xtd3Ca"
   ]
 }
