@@ -58,9 +58,9 @@ class Slideshow extends HTMLElement {
       nextBtn.addEventListener("click", this.#onNextSlide.bind(this));
     }
 
-    const pagination = this.querySelector('.slide-pagination');
-    if (pagination) {
-      pagination.addEventListener("click", this.#onDotClick.bind(this));
+    const indicator = this.querySelector('.slide-indicator');
+    if (indicator) {
+      indicator.addEventListener("click", this.#onDotClick.bind(this));
     }
   }
 
@@ -69,13 +69,13 @@ class Slideshow extends HTMLElement {
   }
 
   #renderSlides() {
-    const pagination = this.querySelector('.slide-pagination');
+    const indicator = this.querySelector('.slide-indicator');
     this.#slides.forEach((_, index) => {
       const dot = document.createElement("i");
-      dot.classList.add("slide-pagination__item")
+      dot.classList.add("slide-indicator__item")
       dot.classList.toggle('active', index === this.#currentIndex);
       dot.setAttribute("data-index", index);
-      pagination.appendChild(dot);
+      indicator.appendChild(dot);
     })
   }
 
@@ -84,8 +84,8 @@ class Slideshow extends HTMLElement {
     const offset = -100 * this.#currentIndex;
     slideWrapper.style.transform = `translateX(${offset}%)`;
 
-    const paginationItems = this.querySelectorAll('.slide-pagination__item');
-    paginationItems.forEach((item) => {
+    const indicatorItems = this.querySelectorAll('.slide-indicator__item');
+    indicatorItems.forEach((item) => {
       const index = parseInt(item.dataset?.index, 10);
       if (!isNaN(index)) {
         item.classList.toggle('active', index === this.#currentIndex);
