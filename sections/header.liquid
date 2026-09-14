@@ -6,11 +6,11 @@
   {% if section.settings.header_menu %}
     <ul class="menu">
     {% for link in section.settings.header_menu.links %}
-      <li class="menu-item">
+      <li class="menu-item {% if link.active %}active{% endif %}">
         <a href="{{ link.url }}">{{ link.title }}</a>
       </li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
   {% endif %}
 </div>
 {% schema %}
