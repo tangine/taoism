@@ -11,15 +11,15 @@
   "type": "header",
   "name": "t:names.header",
   "sections": {
-    "header_7rNr4r": {
+    "header_8Uw7jP": {
       "type": "header",
       "name": "t:names.header",
       "settings": {
-        "header_menu": "main-menu"
+        "header_menu": ""
       }
     }
   },
   "order": [
-    "header_7rNr4r"
+    "header_8Uw7jP"
   ]
 }
