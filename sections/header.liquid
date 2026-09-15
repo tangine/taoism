@@ -1,0 +1,36 @@
+{% stylesheet %}
+  .menu {display: flex;flex-direction: row;}
+{% endstylesheet %}
+
+<div>
+  {% if section.settings.header_menu %}
+    <ul class="menu">
+    {% for link in section.settings.header_menu.links %}
+      <li class="menu-item {% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "t:names.header",
+  "enabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "header_menu",
+      "label": "t:settings.menu"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:names.header"
+    }
+  ]
+}
+{% endschema %}

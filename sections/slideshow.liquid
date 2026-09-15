@@ -1,0 +1,46 @@
+{% stylesheet %}
+.slide {display: block;width: 100%;overflow:hidden;aspect-ratio:2.5; position: relative;}
+.slide .slide-wrapper {width: 100%;height: 100%;display:flex;flex-direction: row;align-item:stretch;}
+.slide .slide-indicator{display:flex;flex-direction:row;justify-content: center;position: absolute;bottom:1em;left:50%;transform:translateX(-50%);gap:10px;max-width:100%;}
+.slide .slide-indicator .slide-indicator__item{display:block;width:.75em;aspect-ratio:1;border-radius:50%;background:#ffffff88;border:2px solid #ffffffdd;cursor: pointer;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(0, 0, 0, 0.1);transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);}
+.slide .slide-indicator .slide-indicator__item.active{background:blue;background:#fff;border-color: #fff;box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 0 6px 16px rgba(0, 0, 0, 0.4);}
+.slide .slide-indicator .slide-indicator__item:hover{transform: scale(1.25);}
+{% endstylesheet %}
+
+<slide-show class="slide relative" autoplay="true" interval="3000" style="aspect-ratio: {{ section.settings.aspect_ratio }};">
+  <div class="slide-wrapper">
+    {% content_for 'blocks' %}
+  </div>
+  <div class="slide__prev"></div>
+  <div class="slide__next"></div>
+  <div class="slide-indicator"></div>
+</slide-show>
+{% schema %}
+{
+  "name": "t:names.slide",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "aspect_ratio",
+      "label": "aspect-ratio",
+      "default": "16 / 9"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "_slide"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.slide"
+    }
+  ]
+}
+{% endschema %}
