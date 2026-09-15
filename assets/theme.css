@@ -218,3 +218,7 @@ legend {
   display: flex;
   flex-direction: column-reverse;
 }
+
+body {
+  color: rebeccapurple;
+}
