@@ -1,1 +1,198 @@
-var e=(e,t)=>{customElements.get(e)||customElements.define(e,t)};function t(e,t){return(e%t+t)%t}var n=class extends HTMLElement{connectedCallback(){if(!this.shadowRoot){let e=this.querySelector(`:scope > template[shadowrootmode="open"]`);if(!(e instanceof HTMLTemplateElement))return;this.attachShadow({mode:`open`}).append(e.content.cloneNode(!0))}}},r=class extends n{constructor(){super()}connectedCallback(){this.#e()}attributeChangedCallback(e,t,n){t!==n&&(this.observeAttr[e]=n)}#e(){this.querySelectorAll(`[ref]`)}},i=class extends r{#e=null;#t=0;#n;#r=!0;#i=!1;#a=3e3;#o=1e3;#s=this.#a;static get observedAttributes(){return[`autoplay`,`interval`,`loop`]}attributeChangedCallback(e,t,n){console.log(`attributeChangedCallback`,e,t,n),super.attributeChangedCallback(e,t,n),console.log(this.observeAttr),e===`autoplay`&&(this.#r=n!==null&&n!==`false`),e===`loop`&&(this.#i=n!==null&&n!==`false`),e===`interval`&&(this.#s=Math.max(parseInt(n,10)||this.#a,this.#o)),this.#b()}constructor(){super(),this.#n=[],this.#t=0}connectedCallback(){this.#l(),this.#u(),this.#c(),this.#f()}disconnectedCallback(){this.#p()}#c(){let e=this.querySelector(`.slide-prev`);e&&e.addEventListener(`click`,this.#g.bind(this));let t=this.querySelector(`.slide-next`);t&&t.addEventListener(`click`,this.#_.bind(this));let n=this.querySelector(`.slide-indicator`);n&&n.addEventListener(`click`,this.#h.bind(this))}#l(){this.#n=Array.from(this.querySelectorAll(`.slide-item`))}#u(){let e=this.querySelector(`.slide-indicator`);e&&this.#n.forEach((t,n)=>{let r=document.createElement(`i`);r.classList.add(`slide-indicator__item`),r.classList.toggle(`active`,n===this.#t),r.setAttribute(`data-index`,String(n)),e.appendChild(r)})}#d(){let e=this.querySelector(`.slide-wrapper`),t=-100*this.#t;e&&(e.style.transform=`translateX(${t}%)`),this.querySelectorAll(`.slide-indicator__item`).forEach(e=>{let t=parseInt(e.dataset.index??``,10);isNaN(t)||e.classList.toggle(`active`,t===this.#t)})}#f(){this.#e||=setInterval(()=>{this.#y()},this.#s)}#p(){this.#e&&=(clearInterval(this.#e),null)}#m(e){let n=this.#n.length;this.#t=e,!(n<=1)&&(this.#t=t(e,n),this.#d())}#h(e){let t=e.target,n=parseInt(t.dataset.index??``,10);isNaN(n)||(this.#m(n),this.#b())}#g(e){e.preventDefault(),this.#v()}#_(e){e.preventDefault(),this.#y()}#v(){this.#m(this.#t-1)}#y(){this.#m(this.#t+1)}#b(){this.#p(),this.#f()}},a=class extends HTMLElement{constructor(){super()}},o=class extends r{static get observedAttributes(){return[`id`,`line`,`variant`]}},s=class extends r{constructor(){super()}connectedCallback(){super.connectedCallback(),this.addEventListener(`change`,this.#e)}#e(){}};e(`slide-show`,i),e(`quantity-editor`,a),e(`cart-item`,o),e(`variant-picker`,s);
+//#region src/utils/index.ts
+var registerComponent = (name, component) => {
+	if (!customElements.get(name)) customElements.define(name, component);
+};
+/**
+* 取模运算
+* @param dividend 被取模数
+* @param modulus 模数
+*/
+function mod(dividend, modulus) {
+	return (dividend % modulus + modulus) % modulus;
+}
+//#endregion
+//#region src/components/component.ts
+var DeclarativeShadowElement = class extends HTMLElement {
+	connectedCallback() {
+		if (!this.shadowRoot) {
+			const template = this.querySelector(":scope > template[shadowrootmode=\"open\"]");
+			if (!(template instanceof HTMLTemplateElement)) return;
+			this.attachShadow({ mode: "open" }).append(template.content.cloneNode(true));
+		}
+	}
+};
+var BaseComponent = class extends DeclarativeShadowElement {
+	constructor() {
+		super();
+	}
+	connectedCallback() {
+		this.#updateRefs();
+	}
+	attributeChangedCallback(attributeName, oldValue, newValue) {
+		if (oldValue !== newValue) this.observeAttr[attributeName] = newValue;
+	}
+	#updateRefs() {
+		this.querySelectorAll("[ref]");
+	}
+};
+//#endregion
+//#region src/components/slideshow.ts
+var Slideshow = class extends BaseComponent {
+	#timer = null;
+	#currentIndex = 0;
+	#slides;
+	#autoplay = true;
+	#loop = false;
+	#defaultInterval = 3e3;
+	#minInterval = 1e3;
+	#interval = this.#defaultInterval;
+	static get observedAttributes() {
+		return [
+			"autoplay",
+			"interval",
+			"loop"
+		];
+	}
+	attributeChangedCallback(attrName, oldVal, newVal) {
+		console.log("attributeChangedCallback", attrName, oldVal, newVal);
+		super.attributeChangedCallback(attrName, oldVal, newVal);
+		console.log(this.observeAttr);
+		if (attrName === "autoplay") this.#autoplay = newVal !== null && newVal !== "false";
+		if (attrName === "loop") this.#loop = newVal !== null && newVal !== "false";
+		if (attrName === "interval") this.#interval = Math.max(parseInt(newVal, 10) || this.#defaultInterval, this.#minInterval);
+		this.#resetAutoplayTimer();
+	}
+	constructor() {
+		super();
+		this.#slides = [];
+		this.#currentIndex = 0;
+	}
+	connectedCallback() {
+		this.#collectSlides();
+		this.#renderSlides();
+		this.#bindEvents();
+		this.#startAutoplay();
+	}
+	disconnectedCallback() {
+		this.#stopAutoplay();
+	}
+	#bindEvents() {
+		const prevBtn = this.querySelector(".slide-prev");
+		if (prevBtn) prevBtn.addEventListener("click", this.#onPrevSlide.bind(this));
+		const nextBtn = this.querySelector(".slide-next");
+		if (nextBtn) nextBtn.addEventListener("click", this.#onNextSlide.bind(this));
+		const indicator = this.querySelector(".slide-indicator");
+		if (indicator) indicator.addEventListener("click", this.#onDotClick.bind(this));
+	}
+	#collectSlides() {
+		this.#slides = Array.from(this.querySelectorAll(".slide-item"));
+	}
+	#renderSlides() {
+		const indicator = this.querySelector(".slide-indicator");
+		if (indicator) this.#slides.forEach((_, index) => {
+			const dot = document.createElement("i");
+			dot.classList.add("slide-indicator__item");
+			dot.classList.toggle("active", index === this.#currentIndex);
+			dot.setAttribute("data-index", String(index));
+			indicator.appendChild(dot);
+		});
+	}
+	#updateSlidePosition() {
+		const slideWrapper = this.querySelector(".slide-wrapper");
+		const offset = -100 * this.#currentIndex;
+		if (slideWrapper) slideWrapper.style.transform = `translateX(${offset}%)`;
+		this.querySelectorAll(".slide-indicator__item").forEach((item) => {
+			const index = parseInt(item.dataset.index ?? "", 10);
+			if (!isNaN(index)) item.classList.toggle("active", index === this.#currentIndex);
+		});
+	}
+	#startAutoplay() {
+		if (!this.#timer) this.#timer = setInterval(() => {
+			this.#nextSlide();
+		}, this.#interval);
+	}
+	#stopAutoplay() {
+		if (this.#timer) {
+			clearInterval(this.#timer);
+			this.#timer = null;
+		}
+	}
+	#jumpToSlide(index) {
+		const slideCount = this.#slides.length;
+		this.#currentIndex = index;
+		if (slideCount <= 1) return;
+		this.#currentIndex = mod(index, slideCount);
+		this.#updateSlidePosition();
+	}
+	#onDotClick(e) {
+		const target = e.target;
+		const index = parseInt(target.dataset.index ?? "", 10);
+		if (!isNaN(index)) {
+			this.#jumpToSlide(index);
+			this.#resetAutoplayTimer();
+		}
+	}
+	#onPrevSlide(e) {
+		e.preventDefault();
+		this.#prevSlide();
+	}
+	#onNextSlide(e) {
+		e.preventDefault();
+		this.#nextSlide();
+	}
+	#prevSlide() {
+		this.#jumpToSlide(this.#currentIndex - 1);
+	}
+	#nextSlide() {
+		this.#jumpToSlide(this.#currentIndex + 1);
+	}
+	#resetAutoplayTimer() {
+		this.#stopAutoplay();
+		this.#startAutoplay();
+	}
+};
+//#endregion
+//#region src/components/quantity-editor.ts
+var QuantityEditor = class extends HTMLElement {
+	constructor() {
+		super();
+	}
+};
+//#endregion
+//#region src/components/cart-item.ts
+var CartItem = class extends BaseComponent {
+	static get observedAttributes() {
+		return [
+			"id",
+			"line",
+			"variant"
+		];
+	}
+};
+//#endregion
+//#region src/components/variant-picker.ts
+var VariantPicker = class extends BaseComponent {
+	constructor() {
+		super();
+	}
+	connectedCallback() {
+		super.connectedCallback();
+		this.addEventListener("change", this.#onChange);
+	}
+	#onChange() {}
+	#dispatch() {
+		this.dispatchEvent(new CustomEvent("variant:change", {
+			bubbles: true,
+			cancelable: true,
+			composed: true,
+			detail: {}
+		}));
+	}
+};
+//#endregion
+//#region src/index.ts
+registerComponent("slide-show", Slideshow);
+registerComponent("quantity-editor", QuantityEditor);
+registerComponent("cart-item", CartItem);
+registerComponent("variant-picker", VariantPicker);
+//#endregion
