@@ -195,4 +195,5 @@ registerComponent("slide-show", Slideshow);
 registerComponent("quantity-editor", QuantityEditor);
 registerComponent("cart-item", CartItem);
 registerComponent("variant-picker", VariantPicker);
+window.eventEmitter = {};
 //#endregion
