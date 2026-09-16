@@ -7,7 +7,7 @@
 .slide .slide-indicator .slide-indicator__item:hover{transform: scale(1.25);}
 {% endstylesheet %}
 
-<slide-show class="slide relative" autoplay="true" interval="3000" loop="true" style="aspect-ratio: {{ section.settings.aspect_ratio }};">
+<slide-show class="slide relative" autoplay="true" interval="{{ section.settings.interval | times: 1000 }}" loop="true" style="aspect-ratio: {{ section.settings.aspect_ratio }};">
   <div class="slide-wrapper">
     {% content_for 'blocks' %}
   </div>
@@ -27,6 +27,16 @@
       "id": "aspect_ratio",
       "label": "aspect-ratio",
       "default": "16 / 9"
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "interval",
+      "default": 3,
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "unit": "s"
     }
   ],
   "blocks": [
