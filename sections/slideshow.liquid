@@ -7,7 +7,7 @@
 .slide .slide-indicator .slide-indicator__item:hover{transform: scale(1.25);}
 {% endstylesheet %}
 
-<slide-show class="slide relative" autoplay="true" interval="3000" style="aspect-ratio: {{ section.settings.aspect_ratio }};">
+<slide-show class="slide relative" autoplay="true" interval="3000" loop="true" style="aspect-ratio: {{ section.settings.aspect_ratio }};">
   <div class="slide-wrapper">
     {% content_for 'blocks' %}
   </div>
