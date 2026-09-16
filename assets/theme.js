@@ -11,6 +11,7 @@ var DeclarativeShadowElement = class extends HTMLElement {
 var BaseComponent = class extends DeclarativeShadowElement {
 	constructor() {
 		super();
+		this.observeAttr = {};
 	}
 	connectedCallback() {
 		this.#updateRefs();
@@ -116,8 +117,11 @@ var Slideshow = class extends BaseComponent {
 	}
 	#jumpToSlide(index) {
 		const slideCount = this.#slides.length;
-		this.#currentIndex = index;
-		if (slideCount <= 1) return;
+		console.log(this.#loop, index, slideCount);
+		if (slideCount <= 1 || !this.#loop && (index >= slideCount || index < 0)) {
+			this.#stopAutoplay();
+			return;
+		}
 		this.#currentIndex = mod(index, slideCount);
 		this.#updateSlidePosition();
 	}
