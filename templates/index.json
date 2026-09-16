@@ -62,7 +62,8 @@
       ],
       "name": "t:names.slideshow",
       "settings": {
-        "aspect_ratio": "2.5"
+        "aspect_ratio": "2.5",
+        "interval": 5
       }
     }
   },
