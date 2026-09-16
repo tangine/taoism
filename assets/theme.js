@@ -105,7 +105,7 @@ var Slideshow = class extends BaseComponent {
 	}
 	#startAutoplay() {
 		if (!this.#timer) this.#timer = setInterval(() => {
-			this.#nextSlide();
+			this.next();
 		}, this.#interval);
 	}
 	#stopAutoplay() {
@@ -131,16 +131,16 @@ var Slideshow = class extends BaseComponent {
 	}
 	#onPrevSlide(e) {
 		e.preventDefault();
-		this.#prevSlide();
+		this.prev();
 	}
 	#onNextSlide(e) {
 		e.preventDefault();
-		this.#nextSlide();
+		this.next();
 	}
-	#prevSlide() {
+	prev() {
 		this.#jumpToSlide(this.#currentIndex - 1);
 	}
-	#nextSlide() {
+	next() {
 		this.#jumpToSlide(this.#currentIndex + 1);
 	}
 	#resetAutoplayTimer() {
