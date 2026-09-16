@@ -153,6 +153,13 @@ var Slideshow = class extends BaseComponent {
 	}
 };
 //#endregion
+//#region src/componets/quantity-editor.ts
+var QuantityEditor = class extends BaseComponent {
+	constructor() {
+		super();
+	}
+};
+//#endregion
 //#region ../../packages/shared/src/emitter.ts
 var EventEmitter = class {
 	#events;
@@ -200,4 +207,5 @@ var registerWebComponent = (name, component) => {
 //#endregion
 //#region src/index.ts
 registerWebComponent("slide-show", Slideshow);
+registerWebComponent("quantity-editor", QuantityEditor);
 //#endregion

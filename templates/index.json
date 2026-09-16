@@ -53,20 +53,12 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "slide_63j9cw",
-        "slide_nV9QEE",
-        "slide_VGNBML",
-        "slide_8apaJH",
-        "slide_XPcahT"
-      ],
+      "block_order": ["slide_63j9cw", "slide_nV9QEE", "slide_VGNBML", "slide_8apaJH", "slide_XPcahT"],
       "name": "t:names.slideshow",
       "settings": {
         "aspect_ratio": "2.5"
       }
     }
   },
-  "order": [
-    "slideshow_Nk6YnW"
-  ]
+  "order": ["slideshow_Nk6YnW"]
 }
